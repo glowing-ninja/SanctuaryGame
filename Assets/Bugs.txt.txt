@@ -1,1 +1,0 @@
-- Aunque imagino que no pasara porque no deberia haber enemigos donde mueres, si estas muerto y te pega un enemigo, la cuenta atras se va reseteando
