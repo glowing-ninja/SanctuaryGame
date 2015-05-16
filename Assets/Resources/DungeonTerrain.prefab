@@ -474,6 +474,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499612}
+  - 114: {fileID: 11481436}
   m_Layer: 0
   m_Name: DungeonTerrain
   m_TagString: Untagged
@@ -733,7 +734,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127798}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: .707106888, z: 0, w: .707106769}
   m_LocalPosition: {x: -5, y: -.000122070312, z: 4.74517632}
   m_LocalScale: {x: .5, y: 1, z: .5}
   m_Children:
@@ -771,7 +772,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109032}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: .707106888, z: 0, w: .707106769}
   m_LocalPosition: {x: -5, y: -.000122070312, z: 4.51982546}
   m_LocalScale: {x: .5, y: 1, z: .5}
   m_Children:
@@ -1723,6 +1724,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazDown: 1
+--- !u!114 &11481436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc23c958239e2f5419c3969eead48ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tilesize: 2
+  MaxFalldownHeight: 1
+  ClimbLimit: .800000012
+  HeuristicAggression: 0
+  HighestPoint: 100
+  LowestPoint: -50
+  MapStartPosition: {x: 0, y: 0}
+  MapEndPosition: {x: 0, y: 0}
+  DisallowedTags:
+  - Destructible
+  IgnoreTags:
+  - Enemy
+  MoveDiagonal: 1
+  DrawMapInEditor: 0
+  CheckFullTileSize: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

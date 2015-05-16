@@ -15,7 +15,9 @@ public class LevelManager : MonoSingleton<LevelManager> {
 	private MapGenerator mapGenerator = null;
 	private bool isPlayerInDungeon = false;
 	//private MapGenerator mapGenerator;
-	
+
+    private Pathfinder pathFinder;
+
 	public override void Init ()
 	{
 		base.Init ();
@@ -509,6 +511,13 @@ public class LevelManager : MonoSingleton<LevelManager> {
 				GameObject instantiantedDungeon = Instantiate(dungeonTerrain, new Vector3(100 * actualLevel, 0, 100 * actualLevel), Quaternion.identity) as GameObject;
 				instantiantedDungeon.transform.position = new Vector3(250 * (actualLevel + 1), 0, 250 * (actualLevel + 1));
 				instantiantedDungeon.name = "Level_" + actualLevel;
+
+                pathFinder = instantiantedDungeon.GetComponent<Pathfinder>();
+                pathFinder.CrearMapa(new Vector2(instantiantedDungeon.transform.position.x,
+                                                 instantiantedDungeon.transform.position.z),
+                                     new Vector2(instantiantedDungeon.transform.position.x + 200,
+                                                 instantiantedDungeon.transform.position.z + 200));
+
 				pEnemies.Place(instantiantedDungeon.transform, mapGenerator.MazmorraCompleta[actualLevel]);
 				mapGenerator.GenerateChests(actualLevel, instantiantedDungeon);
 				mapGenerator.MazmorraCompleta[actualLevel].terrainParent = instantiantedDungeon;

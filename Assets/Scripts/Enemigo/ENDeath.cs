@@ -80,7 +80,7 @@ public class ENDeath : MonoBehaviour {
 	[RPC]
 	void DestroyAccrosTheNetwork()
 	{
-        Destroy (enemigo.GetCanvasEnemigo());
+        Destroy(stats.GetCanvasEnemigo());
 		Destroy (gameObject);
 	}
 	

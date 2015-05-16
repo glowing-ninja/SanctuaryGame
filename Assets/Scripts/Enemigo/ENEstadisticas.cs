@@ -246,8 +246,8 @@ public class ENEstadisticas : MonoBehaviour {
 
     public void EstablecerCanvas()
     {
-        if (barraVida2D)
-        {
+        /*if (barraVida2D)
+        {*/
             enemyCanvas = GameObject.FindGameObjectWithTag("EnemyCanvas");
             canvasAncla = transform.FindChild("AnclaCanvas").transform;
 
@@ -265,10 +265,10 @@ public class ENEstadisticas : MonoBehaviour {
             barraVida = canvasEnemigo.GetComponent<ENBarraVida>();
             barraVida.SetAnclaCanvas(canvasAncla);
             barraVida.SetAmenaza(sisAmenaza);
-        }
+        /*}
         else
         {
             barraVida = transform.GetComponentInChildren<ENBarraVida>();
-        }
+        }*/
     }
 }

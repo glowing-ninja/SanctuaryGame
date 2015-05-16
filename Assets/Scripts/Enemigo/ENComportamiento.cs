@@ -105,9 +105,4 @@ public class ENComportamiento : MonoBehaviour {
 	public GameObject GetModelo() {
 		return modelo;
 	}
-
-    public GameObject GetCanvasEnemigo()
-    {
-        return estadisticas.GetCanvasEnemigo();
-    }
 }
