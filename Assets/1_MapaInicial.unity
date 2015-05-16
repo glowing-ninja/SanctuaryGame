@@ -17218,7 +17218,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22420968, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 22420968, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
       propertyPath: m_AnchoredPosition.x
