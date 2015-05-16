@@ -407,7 +407,7 @@ MonoBehaviour:
   - {fileID: 601548659}
   buttons: 7500000075000000690000006800000000000000
   menuEscape: {fileID: 576337204}
-  tradeUI: {fileID: 0}
+  tradeUI: {fileID: 1483999508}
 --- !u!1 &41943290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1647,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToolTip: {fileID: 180416, guid: a54ffe0a79ead4a838fa8efdff419717, type: 2}
   type: 3
+  tmp:
+    name: 
+    rarity: 1
+    probModifier: 0
+    level: 1
+    type: 0
+    subType: 0
+    damage: 0
+    armor: 0
+    stats: 0000000000000000000000000000000000000000
+    isStat1: 0
+    isStat2: 0
+    isAffinity: 5
+    affinity: 0
+    gold: 0
   img: {fileID: 0}
 --- !u!114 &148980732
 MonoBehaviour:
@@ -9426,6 +9441,7 @@ MonoBehaviour:
   slot: {fileID: 197718, guid: b9d7fa85d0b694937a39d2dea07d1c0e, type: 2}
   itemPorFila: 6
   total_slots: 18
+  inventory: []
   inventoryPanel: {fileID: 1494254442}
   Gold: 0
 --- !u!1 &737295191
@@ -15193,6 +15209,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToolTip: {fileID: 180416, guid: a54ffe0a79ead4a838fa8efdff419717, type: 2}
   type: 0
+  tmp:
+    name: 
+    rarity: 1
+    probModifier: 0
+    level: 1
+    type: 0
+    subType: 0
+    damage: 0
+    armor: 0
+    stats: 0000000000000000000000000000000000000000
+    isStat1: 0
+    isStat2: 0
+    isAffinity: 5
+    affinity: 0
+    gold: 0
   img: {fileID: 0}
 --- !u!114 &1284441802
 MonoBehaviour:
@@ -15368,6 +15399,59 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1287409817}
+--- !u!1 &1297618979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1297618982}
+  - 114: {fileID: 1297618981}
+  - 148: {fileID: 1297618980}
+  m_Layer: 0
+  m_Name: TradeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!148 &1297618980
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297618979}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 6
+    m_Type: 1
+--- !u!114 &1297618981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297618979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716f4a4a788bd5c40ad1dea28b8881aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tradeUI: {fileID: 1483999508}
+--- !u!4 &1297618982
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297618979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 709.5, y: 319, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
 --- !u!1001 &1298957328
 Prefab:
   m_ObjectHideFlags: 0
@@ -16194,6 +16278,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToolTip: {fileID: 180416, guid: a54ffe0a79ead4a838fa8efdff419717, type: 2}
   type: 2
+  tmp:
+    name: 
+    rarity: 1
+    probModifier: 0
+    level: 1
+    type: 0
+    subType: 0
+    damage: 0
+    armor: 0
+    stats: 0000000000000000000000000000000000000000
+    isStat1: 0
+    isStat2: 0
+    isAffinity: 5
+    affinity: 0
+    gold: 0
   img: {fileID: 0}
 --- !u!114 &1387069798
 MonoBehaviour:
@@ -17268,13 +17367,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11480658, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1483999507
 RectTransform:
   m_PrefabParentObject: {fileID: 22420968, guid: 05928b98d6bde487ca6ac60a38ce746f,
     type: 2}
+  m_PrefabInternal: {fileID: 1483999506}
+--- !u!1 &1483999508
+GameObject:
+  m_PrefabParentObject: {fileID: 136352, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
   m_PrefabInternal: {fileID: 1483999506}
 --- !u!1001 &1485319097
 Prefab:
@@ -23461,6 +23565,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToolTip: {fileID: 180416, guid: a54ffe0a79ead4a838fa8efdff419717, type: 2}
   type: 1
+  tmp:
+    name: 
+    rarity: 1
+    probModifier: 0
+    level: 1
+    type: 0
+    subType: 0
+    damage: 0
+    armor: 0
+    stats: 0000000000000000000000000000000000000000
+    isStat1: 0
+    isStat2: 0
+    isAffinity: 5
+    affinity: 0
+    gold: 0
   img: {fileID: 0}
 --- !u!114 &2105544303
 MonoBehaviour:

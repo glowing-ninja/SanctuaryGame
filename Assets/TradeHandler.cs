@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class TradeHandler : MonoBehaviour {
 
@@ -20,12 +22,12 @@ public class TradeHandler : MonoBehaviour {
 	}
 	
 	public void onChange (Item i) {
-		GetComponent<NetworkView>().RPC("updateTrade", person2trade, i);
+		GetComponent<NetworkView>().RPC("updateTrade", person2trade, ItemSerialize(i));
 	}
 
 	[RPC]
-	public void updateTrade (Item i) {
-		transform.GetChild(1).GetComponent<ShowItemInTrade>().item = i;
+	public void updateTrade (byte[] i) {
+		transform.GetChild(1).GetComponent<ShowItemInTrade>().item = DeserializeItem(i);
 	}
 
 	public void onMyOkClicked () {
@@ -54,5 +56,31 @@ public class TradeHandler : MonoBehaviour {
 			gs.gameObject.transform.GetChild(0).GetChild(i + 1).GetComponent<ShowItemOnOver>().i = -1;
 			gameObject.SetActive(false);
 		}
+	}
+
+	private byte[] ItemSerialize(Item item) 
+	{
+		
+		BinaryFormatter binFormatter = new BinaryFormatter();
+		MemoryStream memStream = new MemoryStream();
+		
+		binFormatter.Serialize (memStream, item);
+		byte[] serialized = memStream.ToArray ();
+		
+		memStream.Close ();
+		
+		return serialized;
+	}
+	
+	private Item DeserializeItem(byte[] item)
+	{
+		BinaryFormatter binFormatter = new BinaryFormatter(); 
+		MemoryStream memStream = new MemoryStream();
+		
+		memStream.Write(item,0,item.Length); 
+		
+		memStream.Seek(0, SeekOrigin.Begin); 
+		
+		return (Item)binFormatter.Deserialize(memStream);
 	}
 }

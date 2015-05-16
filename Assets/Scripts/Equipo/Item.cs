@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
+[Serializable]
 public class Item {
 
 	public const int probArma = 20;
@@ -30,7 +32,8 @@ public class Item {
 
 	public Utils.Element isAffinity;
 	public int affinity;
-
+	
+	[NonSerialized]
 	public Sprite icon;
 
 	public int gold;
@@ -65,10 +68,10 @@ public class Item {
 			mod = 100;
 		}
 
-		int t = Random.Range(0, 100);
+		int t = UnityEngine.Random.Range(0, 100);
 		string name = "";
 		if (t < probArma) {			// Si es un arma calculamos el subtip
-			int subType = Random.Range(0,5);
+			int subType = UnityEngine.Random.Range(0,5);
 			switch(subType) {
 				case 0: name = "Espada bastarda de"; break;
 				case 1: name = "Tomo de poder de"; break;
@@ -80,7 +83,7 @@ public class Item {
 			i.type = 0;
 			i.subType = subType;
 		} else {
-			int subType = Random.Range(0,3);
+			int subType = UnityEngine.Random.Range(0,3);
 			switch(subType) {
 			case 0: name = "Peto de"; i = new Chest();break;
 			case 1: name = "Perneras de"; i = new Legs(); break;
@@ -94,7 +97,7 @@ public class Item {
 		// Calculamos la rareza
 		int rarity = 1;
 		float multiR = 1f;
-		int r = Random.Range(0,100);
+		int r = UnityEngine.Random.Range(0,100);
 		/* Si el cofre es de oro, rarity 5 tiene un 100% de prob. Si es de plata, rarity5 tiene un 12%, rarity4 un 28% y rarity3 un 70%*/
 		if (r < 2 + mod) {       rarity = 5; multiR = r5Multi;}	//  2%
 		else if (r < 10 + mod * 3) { rarity = 4; multiR = r4Multi;}	//  8%
@@ -106,11 +109,11 @@ public class Item {
 		// Calcular arma y armadura
 		int damage = 0, armor = 0;
 		if (i.type == 0) {
-			damage  = (int)(Random.Range(Mathf.Max(level, 5), level * 2) * multiR);
+			damage  = (int)(UnityEngine.Random.Range(Mathf.Max(level, 5), level * 2) * multiR);
 			i.damage = damage;
 		}
 		else if (i.type == 1) {
-			armor = (int)(Random.Range(Mathf.Max(level, 5), level * 2) * multiR);
+			armor = (int)(UnityEngine.Random.Range(Mathf.Max(level, 5), level * 2) * multiR);
 			i.armor = armor;
 		}
 
@@ -121,8 +124,8 @@ public class Item {
 		//	name += " mendigo";
 		
 		if (rarity >= 2) {
-			i.isStat1 = Random.Range(0,5);
-			stat1 = (int)(Random.Range(level, (int)(level * 1.5)) * multiR);
+			i.isStat1 = UnityEngine.Random.Range(0,5);
+			stat1 = (int)(UnityEngine.Random.Range(level, (int)(level * 1.5)) * multiR);
 			switch(i.isStat1) {
 			case 0: name += " guerrero"; break;
 			case 1: name += " mago"; break;
@@ -135,8 +138,8 @@ public class Item {
 		
 		if (rarity >= 4) {
 			do {
-				i.isStat2 = Random.Range(0,5);
-				stat2 = (int)(Random.Range(level, (int)(level * 1.5)) * multiR);
+				i.isStat2 = UnityEngine.Random.Range(0,5);
+				stat2 = (int)(UnityEngine.Random.Range(level, (int)(level * 1.5)) * multiR);
 				i.stats[i.isStat2] = stat2;
 			} while (i.isStat2 == i.isStat1);
 			switch(i.isStat2) {
@@ -151,9 +154,9 @@ public class Item {
 		i.name = name;
 
 		// Calcular si tiene afinidad
-		if (Random.Range(0, 100) < probAfinidad) {
+		if (UnityEngine.Random.Range(0, 100) < probAfinidad) {
 			i.isAffinity = i.RandomElement();
-			i.affinity = Random.Range(1, 16);
+			i.affinity = UnityEngine.Random.Range(1, 16);
 		}
 
 		i.gold = i.level * 5;
@@ -170,7 +173,7 @@ public class Item {
 	}
 
 	public Utils.Element RandomElement() {
-		int n = Random.Range(0, 100);
+		int n = UnityEngine.Random.Range(0, 100);
 		if ( n < 20) return Utils.Element.FUEGO;
 		if ( n < 40) return Utils.Element.AGUA;
 		if ( n < 60) return Utils.Element.RAYO;

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System;
 
+[Serializable]
 public class Chest : Item {
 
 	public Chest () {

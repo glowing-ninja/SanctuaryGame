@@ -3,6 +3,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 
+using System;
+
+[Serializable]
 public class ShowItemOnOver : MonoBehaviour {
 
 	public GameObject itemToolTip;
@@ -58,7 +61,7 @@ public class ShowItemOnOver : MonoBehaviour {
 			//else
 			//	i = itemPrev;
 
-			if (Utils.inventoryClick == Utils.ClickSystem.TRADE) {
+			if (Utils.inventoryClick == Utils.ClickSystem.EQUIP) {
 				int itemPrev = i;
 				i = -1;
 				if (Utils.player.GetComponent<Attributtes>().Equipar(itemPrev))
@@ -69,7 +72,7 @@ public class ShowItemOnOver : MonoBehaviour {
 			else if (Utils.inventoryClick == Utils.ClickSystem.SELL) {
 				GameObject.Find("SellPanel").GetComponent<EnableSellWindow>().preparacionVender(i); 
 			}
-			else if (Utils.inventoryClick == Utils.ClickSystem.EQUIP) {
+			else if (Utils.inventoryClick == Utils.ClickSystem.TRADE) {
 				GameObject.Find("TradeBG").transform.GetChild(0).GetComponent<ShowItemOnOver>().i = i;
 				GameObject.Find("TradeBG").GetComponent<TradeHandler>().onChange(inventory.GetComponent<generateSlots>().inventory[i]);
 			}

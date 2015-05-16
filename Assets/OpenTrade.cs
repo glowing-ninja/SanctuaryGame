@@ -12,7 +12,7 @@ public class OpenTrade : MonoBehaviour {
 		PlayerDataBase pdb = mpm.GetComponent<PlayerDataBase>();
 		NetworkPlayer np = pdb.getNetworkPlayer(transform.parent.GetComponent<Text>().text);
 		if (np != null) {
-			trade.gameObject.GetComponent<NetworkView>().RPC("OpenTradeUI", np);
+			GameObject.Find("TradeManager").GetComponent<NetworkView>().RPC("OpenTradeUI", np);
 			trade.init (np);
 			Camera.main.GetComponent<CloseUI>().tradeUI.SetActive(true);
 			Utils.inventoryClick = Utils.ClickSystem.TRADE;
