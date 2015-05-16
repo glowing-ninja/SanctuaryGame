@@ -1,9 +1,0 @@
-fileFormatVersion: 2
-guid: 6009d4635cb84444aac8d49dd6986902
-MonoImporter:
-  serializedVersion: 2
-  defaultReferences:
-  - desgloseWindow: {fileID: 161674, guid: c392a46491cfa4e6f951083a9b23d351, type: 2}
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
