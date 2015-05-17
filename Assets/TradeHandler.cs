@@ -80,7 +80,44 @@ public class TradeHandler : MonoBehaviour {
 		memStream.Write(item,0,item.Length); 
 		
 		memStream.Seek(0, SeekOrigin.Begin); 
+
+		Item tmp = (Item)binFormatter.Deserialize(memStream);
+
+		switch(tmp.type) {
+		case 0: // arma
+			switch (tmp.subType) {
+			case (int)Utils.WeaponType.ESPADA:
+				tmp.icon = Resources.Load<Sprite>("Sprites/sword-icon");
+				break;
+			case (int)Utils.WeaponType.LIBRO:
+				tmp.icon = Resources.Load<Sprite>("Sprites/book-icon");	
+				break;
+			case (int)Utils.WeaponType.ARCO:
+				tmp.icon = Resources.Load<Sprite>("Sprites/bow-icon");
+				break;
+			case (int)Utils.WeaponType.BASTON:
+				tmp.icon = Resources.Load<Sprite>("Sprites/staff-icon");
+				break;
+			case (int)Utils.WeaponType.ESCUDO:
+				tmp.icon = Resources.Load<Sprite>("Sprites/shield-icon");
+				break;
+			}
+			break;
+		case 1:
+			switch (tmp.subType) {
+			case 0:
+				tmp.icon = Resources.Load<Sprite>("Sprites/chest-icon");
+				break;
+			case 1:
+				tmp.icon = Resources.Load<Sprite>("Sprites/legs-icon");	
+				break;
+			case 2:
+				tmp.icon = Resources.Load<Sprite>("Sprites/boots-icon");
+				break;
+			}
+			break;
+		}
 		
-		return (Item)binFormatter.Deserialize(memStream);
+		return tmp;
 	}
 }

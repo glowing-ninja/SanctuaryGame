@@ -15409,6 +15409,7 @@ GameObject:
   - 4: {fileID: 1297618982}
   - 114: {fileID: 1297618981}
   - 148: {fileID: 1297618980}
+  - 114: {fileID: 1297618983}
   m_Layer: 0
   m_Name: TradeManager
   m_TagString: Untagged
@@ -15452,6 +15453,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
+--- !u!114 &1297618983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297618979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74f7cf6f4be3420fa996a7296daf91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myOK: {fileID: 1483999509}
+  yourOK: {fileID: 1483999510}
+  confirmar: {fileID: 1483999511}
+  green: {r: 0, g: .875, b: .00603443384, a: 1}
+  red: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &1298957328
 Prefab:
   m_ObjectHideFlags: 0
@@ -17367,8 +17384,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22472146, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 22419954, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11480658, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
+    - {fileID: 11433450, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
+    - {fileID: 14875416, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1483999507
@@ -17379,6 +17406,18 @@ RectTransform:
 --- !u!1 &1483999508
 GameObject:
   m_PrefabParentObject: {fileID: 136352, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
+  m_PrefabInternal: {fileID: 1483999506}
+--- !u!1 &1483999509
+GameObject:
+  m_PrefabParentObject: {fileID: 120018, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
+  m_PrefabInternal: {fileID: 1483999506}
+--- !u!1 &1483999510
+GameObject:
+  m_PrefabParentObject: {fileID: 195918, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
+  m_PrefabInternal: {fileID: 1483999506}
+--- !u!1 &1483999511
+GameObject:
+  m_PrefabParentObject: {fileID: 134482, guid: 05928b98d6bde487ca6ac60a38ce746f, type: 2}
   m_PrefabInternal: {fileID: 1483999506}
 --- !u!1001 &1485319097
 Prefab:

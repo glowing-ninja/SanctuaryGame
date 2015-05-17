@@ -74,7 +74,7 @@ public class ShowItemOnOver : MonoBehaviour {
 			}
 			else if (Utils.inventoryClick == Utils.ClickSystem.TRADE) {
 				GameObject.Find("TradeBG").transform.GetChild(0).GetComponent<ShowItemOnOver>().i = i;
-				GameObject.Find("TradeBG").GetComponent<TradeHandler>().onChange(inventory.GetComponent<generateSlots>().inventory[i]);
+				GameObject.Find("TradeManager").GetComponent<TradeHandler>().onChange(inventory.GetComponent<generateSlots>().inventory[i]);
 			}
 
 		}
