@@ -17,4 +17,10 @@ public class ShowError : MonoBehaviour {
 		GameObject.Find ("WantTutorial").GetComponent<Tutorial> ().setWaitFalse ();
 		Destroy (inst);
 	}
+
+	public static void ChatError(string error)
+	{
+		Text chatWindow = GameObject.Find("lb_chat").GetComponent<Text>();
+		chatWindow.text = error + "\n";
+	}
 }
