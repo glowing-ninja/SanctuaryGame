@@ -23,6 +23,7 @@ public class ItemToolTip : MonoBehaviour {
 	}
 
 	public void Show (Item i, bool hide) {
+		GetComponent<CanvasGroup> ().alpha = 1.5f;
 		this.hide = hide;
 
 		transform.Find("Border").GetComponent<Image>().color = rareza[i.rarity-1];

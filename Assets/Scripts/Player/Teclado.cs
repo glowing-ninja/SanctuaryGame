@@ -64,7 +64,7 @@ public class Teclado : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetButtonDown ("Fire1")) {
+		if (Input.GetButtonDown ("Fire2")) {
 			this.skillScripts[0].useWithCooldown();
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha1)) {

@@ -49,8 +49,9 @@ public class ENDeath : MonoBehaviour {
 				
 				Utils.player.GetComponent<Attributtes>().addExp(50);
 				
-				generateSlots gs = GameObject.Find("InventoryPanel").GetComponent<generateSlots>();
-				gs.AddGold(Utils.player.GetComponent<Attributtes>().level * 5);
+				//generateSlots gs = GameObject.Find("InventoryPanel").GetComponent<generateSlots>();
+				//gs.AddGold(Utils.player.GetComponent<Attributtes>().level * 5);
+				Utils.player.GetComponent<Attributtes>().addGold(stats.Nivel * 50);
 				
 				//Network.Destroy(gameObject);
 				Network.RemoveRPCs (GetComponent<NetworkView>().viewID);

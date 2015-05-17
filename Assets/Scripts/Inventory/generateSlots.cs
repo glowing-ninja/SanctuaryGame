@@ -40,7 +40,7 @@ public class generateSlots : MonoBehaviour {
 		}
 	}
 
-	public void Add(Item i) {
+	public bool Add(Item i) {
 		if (getCount() < total_slots) {
 			for (int j = 0; j < total_slots; j++) {
 				if (inventory[j] == null) {
@@ -50,7 +50,9 @@ public class generateSlots : MonoBehaviour {
 					j = total_slots + 1;
 				}
 			}
+			return true;
 		}
+		return false;
 	}
 
 	public int getCount() {
