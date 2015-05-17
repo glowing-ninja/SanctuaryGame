@@ -7,6 +7,8 @@ public class Attributtes : MonoBehaviour {
 	public const int VIDA_POR_STA = 5;
 
 	public GameObject sct;
+	public GameObject scGold;
+	public GameObject scExp;
 	public Color healColor;
 
 	public int level;
@@ -241,13 +243,19 @@ public class Attributtes : MonoBehaviour {
 	}
 
 	public void addExp(int exp) {
-		if (level < 50/*LEVEL_MAXIMO*/) {
+		if (level < 10/*LEVEL_MAXIMO*/) {
 			expActual += exp;
 			if (expActual >= expTotal) {
 				expActual = expActual - expTotal;
 				levelUp();
 			}
+			GameObject combatText = Instantiate (scExp) as GameObject;
+			
+			combatText.transform.SetParent(canvas.transform);
+			combatText.transform.position = canvas.transform.position;
+			combatText.GetComponent<Text> ().text = "Exp: " + exp;
 			gameObject.GetComponent<ExperienceTransform> ().HandleExp ();
+			Destroy(combatText, 1f);
 		}
 	}
 
@@ -293,6 +301,22 @@ public class Attributtes : MonoBehaviour {
 	
 	public int getTotalArmor() {
 		return armor + bonusArmor + equipamiento.GetComponent<PlayerEquip>().equipment.getTotalArmor();
+	}
+
+	public void addGold(int g) {
+		inventory.GetComponent<generateSlots>().AddGold(g);
+
+		GameObject combatText = Instantiate (scGold) as GameObject;
+		
+		combatText.transform.SetParent(canvas.transform);
+		combatText.transform.position = canvas.transform.position;
+		if (g > 0)
+			combatText.transform.GetChild(0).GetComponent<Text> ().text = "+" + g;
+		else if (g < 0)
+			combatText.transform.GetChild(0).GetComponent<Text> ().text = "-" + g;
+
+		
+		Destroy(combatText, 1f);
 	}
 
 	public void doDamage(int dmg)

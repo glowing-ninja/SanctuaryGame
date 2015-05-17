@@ -1354,7 +1354,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199398}
-  m_LocalRotation: {x: .676473498, y: .000272109697, z: .736467004, w: -.000294215861}
+  m_LocalRotation: {x: .676473439, y: .000272109668, z: .736466944, w: -.000294215832}
   m_LocalPosition: {x: -17.7768593, y: -1.07329023, z: -3.48757434}
   m_LocalScale: {x: 1.00000024, y: .999999762, z: .999999881}
   m_Children:
@@ -1768,6 +1768,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sct: {fileID: 196964, guid: 756bb9421d72b4cddb65556d4d7bfa21, type: 2}
+  scGold: {fileID: 155556, guid: cf2e8b357b5833d4d9c3a28dc3105d0e, type: 2}
+  scExp: {fileID: 134716, guid: 49cbb935bcaced049bbfeec83fc136f8, type: 2}
   healColor: {r: .408914566, g: .779411793, b: .154736176, a: 0}
   level: 0
   expTotal: 0
