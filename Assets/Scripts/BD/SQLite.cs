@@ -786,6 +786,7 @@ public class SQLite : MonoSingleton<SQLite>
 
 		Attributtes atr = Utils.player.GetComponent<Attributtes> ();
 		generateSlots gs = GameObject.Find ("InventoryPanel").GetComponent<generateSlots> ();
+		Color32 c =Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color;
 		UpdatePlayerTable (name,
 		              atr.level,
 		              atr.expActual,
@@ -800,9 +801,9 @@ public class SQLite : MonoSingleton<SQLite>
 	                  atr.masteryExp [(int)Utils.Stat.DESTREZA],
 	          	 	  atr.masteryExp [(int)Utils.Stat.CURA],
 		              atr.masteryExp [(int)Utils.Stat.AGUANTE],
-		              (int)Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color.r,
-		              (int)Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color.g,
-		              (int)Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color.b);
+		              (int)c.r,
+		              (int)c.g,
+		              (int)c.b);
 
 
 		generateSlots inv = GameObject.Find ("InventoryPanel").GetComponent<generateSlots> ();
