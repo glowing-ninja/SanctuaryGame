@@ -34,8 +34,52 @@ public class MultiplayerScript : MonoSingleton<MultiplayerScript> {
 
 	}
 
+	public void crearPersonaje (string name, float r, float g, float b) {
+		SQLite bd = GameObject.Find("BD").GetComponent<SQLite>();
+		bd.UpdatePlayerTable (name,
+		                   1,	// nivel
+		                   0,	// exp
+		                   0,	// gold
+		                   0,	// mastery
+		                   0,
+		                   0,
+		                   0,
+		                   0,
+		                   0,	// exp mastery
+		                   0,
+		                   0,
+		                   0,
+		                   0,
+		                   (int)r,
+		                   (int)g,
+		                   (int)b);
+	}
+
 	public void crearPartidaOffline () {
+
+		Color32 c = GameObject.Find("Colors").GetComponent<selectColor>().color;
+		//Ensure the player can't join a game with an empty name
 		string name = GameObject.Find ("NuevoPJ").transform.Find ("if_Nombre").transform.Find ("Text").GetComponent<Text>().text;
+		if (name.Equals("")) {
+			playerName = "Player";
+		} else
+			playerName = name;
+		
+		PlayerPrefs.SetString("playerName", this.playerName);
+		Utils.playerName = this.playerName;
+
+		crearPersonaje(playerName, c.r, c.g, c.b);
+
+		//Create server
+		string port = GameObject.Find ("NuevoPJ").transform.Find ("if_Puerto").transform.Find ("Text").GetComponent<Text>().text;
+		this.port = int.Parse(port);
+		Network.InitializeServer(this.numberOfPlayers, this.port, this.useNAT);
+		
+		//Save the serverName using PlayerPrefs
+		PlayerPrefs.SetString("serverName", serverName);
+		
+		GameObject.Find ("LevelLoader").GetComponent<NetworkLevelLoading> ().LoadNewLevel ("1_MapaInicial");
+		/*string name = GameObject.Find ("NuevoPJ").transform.Find ("if_Nombre").transform.Find ("Text").GetComponent<Text>().text;
 		if (name.Equals("")) {
 			playerName = "Player";
 		} else
@@ -52,7 +96,7 @@ public class MultiplayerScript : MonoSingleton<MultiplayerScript> {
 		//Save the serverName using PlayerPrefs
 		PlayerPrefs.SetString("serverName", serverName);
 		
-		GameObject.Find ("LevelLoader").GetComponent<NetworkLevelLoading> ().LoadNewLevel ("4_Tutorial");
+		GameObject.Find ("LevelLoader").GetComponent<NetworkLevelLoading> ().LoadNewLevel ("4_Tutorial");*/
 	}
 
 	public void crearServidor () {

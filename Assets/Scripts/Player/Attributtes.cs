@@ -34,6 +34,8 @@ public class Attributtes : MonoBehaviour {
 	public int health;
 	public int MaxHealth;
 
+	private Color32 piel;
+
 	void Awake()
 	{
 		if(!GetComponent<NetworkView>().isMine)
@@ -84,6 +86,15 @@ public class Attributtes : MonoBehaviour {
 			masteryExp[2] = db.QueryInt("mDexExp", playerName);
 			masteryExp[3] = db.QueryInt("mHealExp", playerName);
 			masteryExp[4] = db.QueryInt("mStaExp", playerName);
+
+			Color32 c = new Color32();
+			c.r = (byte)db.QueryInt("redColor", playerName);
+			c.g = (byte)db.QueryInt("greenColor", playerName);
+			c.b = (byte)db.QueryInt("blueColor", playerName);
+
+			piel = c;
+			Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color = c;
+
 		} else {
 			level = 1;
 			expActual = 0;
@@ -313,7 +324,7 @@ public class Attributtes : MonoBehaviour {
 		if (g > 0)
 			combatText.transform.GetChild(0).GetComponent<Text> ().text = "+" + g;
 		else if (g < 0)
-			combatText.transform.GetChild(0).GetComponent<Text> ().text = "-" + g;
+			combatText.transform.GetChild(0).GetComponent<Text> ().text = "" + g;
 
 		
 		Destroy(combatText, 1f);

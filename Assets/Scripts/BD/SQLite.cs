@@ -1,4 +1,4 @@
-﻿//----------------------------------------------
+//----------------------------------------------
 // SQLiter
 // Copyright © 2014 OuijaPaw Games LLC
 //----------------------------------------------
@@ -266,6 +266,9 @@ public class SQLite : MonoSingleton<SQLite>
 				"mDexExp INTEGER, " +
 				"mHealExp INTEGER, " +
 				"mStaExp INTEGER, " +
+				"redColor INTEGER, " +
+				"greenColor INTEGER, " +
+				"blueColor INTEGER, " +
 				"PRIMARY KEY ("+COL_NAME+"))";
 
 			mCommand.CommandText = mSQLString;
@@ -359,7 +362,8 @@ public class SQLite : MonoSingleton<SQLite>
 	/// <param name="xp"></param>
 	public void UpdatePlayerTable(string name, int level, int xp, int gold,
 	                         int mstr, int msp, int mdex, int mheal, int msta,
-	                         int mstre, int mspe, int mdexe, int mheale, int mstae)
+	                         int mstre, int mspe, int mdexe, int mheale, int mstae,
+	                         int red, int green, int blue)
 	{
 
 		// note - this will replace any item that already exists, overwriting them.  
@@ -379,7 +383,10 @@ public class SQLite : MonoSingleton<SQLite>
 				+ "mSpExp,"
 				+ "mDexExp,"
 				+ "mHealExp,"
-				+ "mStaExp"
+				+ "mStaExp,"
+				+ "redColor,"
+				+ "greenColor,"
+				+ "blueColor"
 				+ ") VALUES ('"
 				+ name + "',"  // note that string values need quote or double-quote delimiters
 				+ level + ","
@@ -394,7 +401,10 @@ public class SQLite : MonoSingleton<SQLite>
 				+ mspe + ","
 				+ mdexe + ","
 				+ mheale + ","
-				+ mstae
+				+ mstae + ","
+				+ red + ","
+				+ green + ","
+				+ blue
 				+ ");";
 		
 		if (DebugMode)
@@ -789,7 +799,10 @@ public class SQLite : MonoSingleton<SQLite>
 	                  atr.masteryExp [(int)Utils.Stat.MAGIA],
 	                  atr.masteryExp [(int)Utils.Stat.DESTREZA],
 	          	 	  atr.masteryExp [(int)Utils.Stat.CURA],
-		              atr.masteryExp [(int)Utils.Stat.AGUANTE]);
+		              atr.masteryExp [(int)Utils.Stat.AGUANTE],
+		              (int)Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color.r,
+		              (int)Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color.g,
+		              (int)Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color.b);
 
 
 		generateSlots inv = GameObject.Find ("InventoryPanel").GetComponent<generateSlots> ();
