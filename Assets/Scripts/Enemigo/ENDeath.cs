@@ -46,8 +46,38 @@ public class ENDeath : MonoBehaviour {
 				
 				mG.MazmorraCompleta[this.level].enemyDatabase.EnemyList[this.index].isDead = true;
 				this.SendSameLevel(parentName, this.level);
-				
-				Utils.player.GetComponent<Attributtes>().addExp(50);
+
+				int exp = 0;
+				switch(stats.Nivel) {
+				case 1:
+					exp = 50;
+					break;
+				case 2:
+					exp = 100;
+					break;
+				case 3:
+					exp = 200;
+					break;
+				case 4:
+					exp = 800;
+					break;
+				case 5:
+					exp = 1600;
+					break;
+				case 6:
+					exp = 3200;
+					break;
+				case 7:
+					exp = 12800;
+					break;
+				case 8:
+					exp = 25600;
+					break;
+				case 9:
+					exp = 51200;
+					break;
+				}
+				Utils.player.GetComponent<Attributtes>().addExp(exp);
 				
 				//generateSlots gs = GameObject.Find("InventoryPanel").GetComponent<generateSlots>();
 				//gs.AddGold(Utils.player.GetComponent<Attributtes>().level * 5);
