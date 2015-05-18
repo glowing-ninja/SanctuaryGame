@@ -123,7 +123,13 @@ public class PlayerName : MonoBehaviour {
 		if(this.setPlayerFlag)
 		{
 			this.setPlayerFlag = false;
-			getPlayers gP = GameObject.Find ("Canvas").GetComponent<getPlayers> ();
+		
+			if(!GetComponent<NetworkView>().isMine)
+			{
+				getPlayers gP = GameObject.Find ("Canvas").GetComponent<getPlayers> ();
+				//gP.players.Add (gameObject);
+				gP.UpdateName (this.gameObject, rName);
+			}
 
 		}
 	}

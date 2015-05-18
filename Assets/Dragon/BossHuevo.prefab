@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 454398}
   - 148: {fileID: 14854402}
   - 114: {fileID: 11454398}
-  - 114: {fileID: 11454396}
   - 114: {fileID: 11420120}
+  - 114: {fileID: 11455462}
   m_Layer: 2
   m_Name: BossHuevo
   m_TagString: Enemy
@@ -383,20 +383,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11454396
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f95d16e1599d548807c031783ac345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muerte: {fileID: 0}
-  level: 0
-  index: 0
 --- !u!114 &11454398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,6 +416,17 @@ MonoBehaviour:
   canvasEnemigo: {fileID: 0}
   barraVida2D: 0
   nombreEnemigo: 
+--- !u!114 &11455462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb49d3c7b9ce3b428011dbd02e0ea96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13554402
 SphereCollider:
   m_ObjectHideFlags: 1

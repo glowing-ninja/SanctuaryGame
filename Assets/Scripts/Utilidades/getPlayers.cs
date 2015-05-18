@@ -43,7 +43,12 @@ public class getPlayers : MonoBehaviour {
 		{
 			if(this.UIList[i].name == player.name + "UI")
 			{
-				player.GetComponent<Text>().text = player.GetComponent<PlayerName>().playerRealName;
+				GameObject auxUI = UIList[i];
+				Text auxText = auxUI.GetComponent<Text>();
+				PlayerName pNameScript = player.GetComponent<PlayerName>();
+				auxText.text = pNameScript.playerRealName;
+
+				//UIList[i].GetComponent<Text>().text = player.GetComponent<PlayerName>().playerRealName;
 			}
 		}
 	}
