@@ -28,7 +28,7 @@ public class generateSlots : MonoBehaviour {
 	}
 
 	public void AddGold(int g) {
-		if (Gold < 999999) {
+		if (Gold <= 999999) {
 			if (Gold + g > 999999) {
 				Gold = 999999;
 			}
