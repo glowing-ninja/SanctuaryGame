@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class DBDisparo : DirectionalSkill {
-	
+
 	public override bool Usar()
 	{
 		RaycastHit hit;
-
+		stopAnimation();
 		Ray ray  = Camera .main .ScreenPointToRay (Input .mousePosition );
 		if(Physics.Raycast (ray, out hit, Mathf.Infinity))
 		{
@@ -28,6 +28,13 @@ public class DBDisparo : DirectionalSkill {
 		}
 		return false;
 	}
+
+	public void stopAnimation() {
+		Utils.player.GetComponent<Animator>().SetBool("Bow", true);
+		followMouse fm = Utils.player.GetComponent<followMouse>();
+		fm.enabled = false;
+	}
+
 
 	override public void Init(GameObject newPlayer, SkillThrower newSkillThrower)
 	{
