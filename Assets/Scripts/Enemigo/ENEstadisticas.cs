@@ -44,11 +44,11 @@ public class ENEstadisticas : MonoBehaviour {
 	{
 		//canvas = this.GetComponent<Canvas> ();
 		//multiplayerScript = GameObject.Find("MultiplayerManager").GetComponent<MultiplayerScript>();
+		this.PuntosSalud = Entereza * 10f;
+		this.maxHealth = this.PuntosSalud;
 	}
 	
 	void Start () {
-		this.PuntosSalud = Entereza * 10f;
-		this.maxHealth = this.PuntosSalud;
 		this.rotationTransform = gameObject.transform.FindChild("Enemigo") as Transform;
         sisAmenaza = GetComponent<Amenaza>();
         EstablecerCanvas();
