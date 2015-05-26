@@ -86,7 +86,9 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			{
 				GetComponent<NetworkView>().RPC("RequestEnemiesOnLevel", RPCMode.Server, 0);
 				this.SetIsInDungeon(Network.player, true, (int)currentDungeon, 0);
+				GetComponent<NetworkView>().RPC("SetIsInDungeon", RPCMode.Server, Network.player, true, (int)currentDungeon, 0);
 			}
+			this.SetIsInDungeon(Network.player, true, (int)currentDungeon, 0);
 			this.isPlayerInDungeon = true;
 		}
 	}
@@ -214,7 +216,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 					GetComponent<NetworkView>().RPC ("SendMap", RPCMode.Others, serializedMap, mapGenerator.depth, mapGenerator.actual, nPlayer.ToString());
 					for(int i = 0; i < mapGenerator.MazmorraCompleta[0].enemyDatabase.Size; i++)
 					{
-						GetComponent<NetworkView>().RPC ("PlaceEnemiesNetwork", RPCMode.All, mapGenerator.MazmorraCompleta[0].enemyDatabase.getPositionAt(i), "Enemigo",  0, i, mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].viewID, "Level_0",mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].enemyPath );
+						GetComponent<NetworkView>().RPC ("PlaceEnemiesNetwork", RPCMode.AllBuffered, mapGenerator.MazmorraCompleta[0].enemyDatabase.getPositionAt(i), "Enemigo",  0, i, mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].viewID, "Level_0",mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].enemyPath );
 					}
 				}
 			}
@@ -324,7 +326,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 	}
 	
 	
-	void OnPlayerConnected(NetworkPlayer networkPlayer)
+	/*void OnPlayerConnected(NetworkPlayer networkPlayer)
 	{
 		GameObject mapObject = GameObject.Find ("Dungeon") as GameObject;
 		
@@ -343,7 +345,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			
 		}
 	}
-	
+	*/
 	
 	
 	
@@ -527,9 +529,14 @@ public class LevelManager : MonoSingleton<LevelManager> {
 		
 		byte[] serializedMap = this.MapSerialize (mapGenerator.MazmorraCompleta [actualLevel]);
 		//		byte[] serializedChest = this.ChestDatabaseSerialize (mapGenerator.chestDatabase);
-		
+		GetComponent<NetworkView>().RPC ("SendMap", RPCMode.AllBuffered, serializedMap, mapGenerator.depth, actualLevel, nPlayer.ToString());
+		for(int i = 0; i < mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.Size; i++)
+		{
+			GetComponent<NetworkView>().RPC ("PlaceEnemiesNetwork", RPCMode.AllBuffered, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.getPositionAt(i), "Enemigo", actualLevel, i, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.EnemyList[i].viewID, "Level_" + actualLevel, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.EnemyList[i].enemyPath);
+		}
+
 		//this.HidePlayerOnOtherLevel(nPlayer, actualLevel);
-		if(nPlayer.ToString() == "0")
+		/*if(nPlayer.ToString() == "0")
 		{
 			Vector3 newPos = new Vector3(10f + 250 * (actualLevel + 1), 1f, 10f + 250 * (actualLevel + 1));
 			Utils.player.transform.position = newPos;
@@ -553,7 +560,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			{
 				GetComponent<NetworkView>().RPC ("PlaceEnemiesNetwork", nPlayer, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.getPositionAt(i), "Enemigo", actualLevel, i, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.EnemyList[i].viewID, "Level_" + actualLevel, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.EnemyList[i].enemyPath);
 			}
-		}
+		}*/
 	}
 	
 	
@@ -617,14 +624,12 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			mapGenerator.Render(mapGenerator.MazmorraCompleta[actual].mapa, instantiantedDungeon.transform);
 			//		mapGenerator.Render(mapGenerator.MazmorraCompleta[actual].mapa);
 			mapGenerator.SpawnChest(actual, instantiantedDungeon.transform);
+
 			if(Network.player.ToString() == nPlayer)
 			{
 				Vector3 newPos = new Vector3(-8f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
 				Utils.player.transform.position = newPos;
 			}
-			
-			if(actual != 0)
-				this.HideAndShowLevel(actual - 1, actual);
 		}
 	}
 	

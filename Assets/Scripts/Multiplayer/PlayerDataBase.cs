@@ -16,6 +16,7 @@ public class PlayerDataBase : MonoBehaviour {
 		this.playersList = new List<PlayerDataClass>();
 	}
 
+
 	void Update()
 	{
 		if(this.showData)
@@ -85,5 +86,10 @@ public class PlayerDataBase : MonoBehaviour {
 			}
 		}
 		return tmp;
+	}
+
+	public void RestartBD()
+	{
+		this.playersList = new List<PlayerDataClass>();
 	}
 }

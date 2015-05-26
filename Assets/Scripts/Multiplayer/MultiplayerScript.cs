@@ -144,6 +144,9 @@ public class MultiplayerScript : MonoSingleton<MultiplayerScript> {
 	{
 		//If a player loses the connection or leaves the scen then level is restarted on their computer
 
+		if(Network.isServer)
+			this.playerDB.RestartBD();
+
 		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 		for(int i = 0; i < players.Length; i++)
 		{

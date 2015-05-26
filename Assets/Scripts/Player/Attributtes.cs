@@ -169,7 +169,8 @@ public class Attributtes : MonoBehaviour {
 		canvas = GameObject.Find("Canvas").transform;
 
 		gameObject.GetComponent<HealthTransform>().enabled = true;
-		gameObject.GetComponent<ExperienceTransform>().enabled = true;
+		if (level < 10)
+			gameObject.GetComponent<ExperienceTransform>().enabled = true;
 		StartCoroutine (HealPorSegundo ());
 		InstantiateWeapon ();
 
@@ -250,7 +251,37 @@ public class Attributtes : MonoBehaviour {
 
 
 	public int getNextExp() {
-		return (int)Mathf.Pow (25 * level, 2);
+		int exp = 0;
+		switch(level) {
+		case 1:
+			exp = 500;
+			break;
+		case 2:
+			exp = 1000;
+			break;
+		case 3:
+			exp = 2000;
+			break;
+		case 4:
+			exp = 8000;
+			break;
+		case 5:
+			exp = 16000;
+			break;
+		case 6:
+			exp = 32000;
+			break;
+		case 7:
+			exp = 128000;
+			break;
+		case 8:
+			exp = 256000;
+			break;
+		case 9:
+			exp = 512000;
+			break;
+		}
+		return exp;
 	}
 
 	public void addExp(int exp) {
@@ -273,8 +304,10 @@ public class Attributtes : MonoBehaviour {
 	public void levelUp() {
 		level++;
 		GameObject.Find ("lb_Lv").GetComponent<Text> ().text = "Lv: " + level;
-		if (level == 50)
+		if (level == 10) {
+			gameObject.GetComponent<ExperienceTransform>().enabled = false;
 			expActual = 0;
+		}
 		
 		expTotal = getNextExp ();
 

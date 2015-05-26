@@ -65,7 +65,7 @@ GameObject:
   - 33: {fileID: 3349404}
   - 136: {fileID: 13692350}
   - 136: {fileID: 13649804}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Modelo
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -7,12 +7,13 @@ public class FBMachaque : TargetSkill {
 
 	public FBMachaque () {
 		//this.resource = "Habilidad/Heal/Castigo";
-		this.name = "Golpe con Escudo";
+		this.name = "Machaque";
 		this.skillType = "Uso: Sobre un jugador o un enemigo";
 		this.cooldownTime = 2f;
 	}
 	
 	override public bool UseOnEnemy (GameObject target) {
+		stopAnimation();
 		int fuerzaSt = owner.GetComponent<Attributtes>().getTotalStat(Utils.Stat.FUERZA);
 		int dmg = owner.GetComponent<Attributtes>().getTotalDamage();
 		damage = (int)(0.3f * fuerzaSt + 0.2f * dmg);
@@ -23,6 +24,12 @@ public class FBMachaque : TargetSkill {
 		//else
 			//target.transform.parent.parent.GetComponent<NetworkView>().RPC("ApplyBuff", RPCMode.Server, this.damage);
 		return true;
+	}
+
+	public void stopAnimation() {
+		Utils.player.GetComponent<Animator>().SetBool("Sword", true);
+		followMouse fm = Utils.player.GetComponent<followMouse>();
+		fm.enabled = false;
 	}
 	
 	override public void MasteryUp () {
