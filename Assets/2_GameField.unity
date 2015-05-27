@@ -1395,7 +1395,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1998693421}
   m_RootOrder: 2
---- !u!4 &271222940
+--- !u!4 &271222940 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401704, guid: 0dd3792f72a384a58900c6a6628dbcee, type: 2}
   m_PrefabInternal: {fileID: 1604223427}
@@ -1472,7 +1472,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 377226690}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &449271795
+--- !u!4 &449271795 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401704, guid: 0dd3792f72a384a58900c6a6628dbcee, type: 2}
   m_PrefabInternal: {fileID: 1893079181}
@@ -1685,7 +1685,7 @@ Transform:
   - {fileID: 1225064688}
   m_Father: {fileID: 1416798287}
   m_RootOrder: 2
---- !u!4 &952455361
+--- !u!4 &952455361 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401704, guid: 0dd3792f72a384a58900c6a6628dbcee, type: 2}
   m_PrefabInternal: {fileID: 59302419}
@@ -2925,7 +2925,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1998693421}
   m_RootOrder: 3
---- !u!4 &1127964022
+--- !u!4 &1127964022 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401704, guid: 0dd3792f72a384a58900c6a6628dbcee, type: 2}
   m_PrefabInternal: {fileID: 176469259}
@@ -4315,8 +4315,6 @@ Terrain:
     serializedVersion: 2
     rgba: 4286545791
   m_LegacyShininess: .078125
-  m_UseDefaultSmoothness: 1
-  m_DefaultSmoothness: 0
   m_MaterialTemplate: {fileID: 2100000, guid: 30c73d365f9943a45898addf8c972c96, type: 2}
   m_BakeLightProbesForTrees: 1
   m_ScaleInLightmap: 1
@@ -4598,11 +4596,11 @@ MonoBehaviour:
   centro: 1
   enemyPaths:
   - Prefab/Enemigos/ENSpider/ENSpiderQueen
---- !u!4 &2028448191
+--- !u!4 &2028448191 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401704, guid: 0dd3792f72a384a58900c6a6628dbcee, type: 2}
   m_PrefabInternal: {fileID: 465727698}
---- !u!4 &2106357453
+--- !u!4 &2106357453 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401704, guid: 0dd3792f72a384a58900c6a6628dbcee, type: 2}
   m_PrefabInternal: {fileID: 885106604}
