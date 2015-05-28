@@ -34,9 +34,9 @@ public class NetworkLevelLoading : MonoSingleton<NetworkLevelLoading>
 			if(lManager.currentDungeon == Utils.DungeonType.NONE)
 			{
 
-				GetComponent<NetworkView>().RPC ("LoadLevelAdditive", RPCMode.All, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
+				GetComponent<NetworkView>().RPC ("LoadLevelAdditive", RPCMode.AllBuffered, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
 			}
-			else 
+			/*else 
 			if(nPlayer != Network.player)
 			{
 				GetComponent<NetworkView>().RPC ("LoadLevelAdditive", nPlayer, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
@@ -44,7 +44,7 @@ public class NetworkLevelLoading : MonoSingleton<NetworkLevelLoading>
 			else
 			{
 				StartCoroutine( this.LoadLevelAdditive(level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom));
-			}
+			}*/
 		}
 	}
 
@@ -55,7 +55,7 @@ public class NetworkLevelLoading : MonoSingleton<NetworkLevelLoading>
 		{
 
 			
-			GetComponent<NetworkView>().RPC ("LoadLevelAdditive", RPCMode.All, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
+			GetComponent<NetworkView>().RPC ("LoadLevelAdditive", RPCMode.AllBuffered, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
 		}
 	}
 

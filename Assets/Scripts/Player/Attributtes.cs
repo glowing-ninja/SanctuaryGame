@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Attributtes : MonoBehaviour {
 
+	private GameObject spawnPoint;
 	public const int VIDA_POR_STA = 5;
 
 	public GameObject sct;
@@ -46,6 +47,8 @@ public class Attributtes : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		this.spawnPoint = GameObject.Find("FirstSpawnPoint");
 
 		bool cargarPj = false;
 		string playerName = Utils.playerName;//PlayerPrefs.GetString ("playerName");
@@ -471,7 +474,7 @@ public class Attributtes : MonoBehaviour {
 			att.expActual = 0;
 
 		gameObject.GetComponent<ExperienceTransform> ().HandleExp ();
-		this.gameObject.transform.position = new Vector3(130f,11f,160f);
+		this.gameObject.transform.position = this.spawnPoint.transform.position;//new Vector3(130f,11f,160f);
 		TPController pController = Utils.player.GetComponent<TPController> ();
 		Teclado pTeclado = Utils.player.GetComponent<Teclado> ();
 		followMouse fMouse = Utils.player.GetComponent<followMouse> ();
