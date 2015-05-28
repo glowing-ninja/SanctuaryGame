@@ -4596,6 +4596,7 @@ MonoBehaviour:
   centro: 1
   enemyPaths:
   - Prefab/Enemigos/ENSpider/ENSpiderQueen
+  - Prefab/Enemigos/ENRat/ENRatExplosive
 --- !u!4 &2028448191 stripped
 Transform:
   m_PrefabParentObject: {fileID: 401704, guid: 0dd3792f72a384a58900c6a6628dbcee, type: 2}

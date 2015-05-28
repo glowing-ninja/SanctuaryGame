@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class Pathfinding : ENComportamiento {
     
-	public List<Vector3> Path = new List<Vector3>();
-	public Pathfinder pathfinder;
+	protected List<Vector3> Path = new List<Vector3>();
+	protected Pathfinder pathfinder;
 	//public float smothRotation = 6.0f;
 
 	void Awake() {
