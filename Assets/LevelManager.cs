@@ -18,6 +18,12 @@ public class LevelManager : MonoSingleton<LevelManager> {
 
     private Pathfinder pathFinder;
 
+	void Start()
+	{
+		if(this.playerDB == null)
+			this.playerDB = GameObject.Find("MultiplayerManager").GetComponent<PlayerDataBase>();
+	}
+
 	public override void Init ()
 	{
 		base.Init ();
