@@ -5,7 +5,7 @@ public class ENSpiderQueen : ENComportamiento
 {
     #region Declaracion variables
     //Habilidades
-    private const int skillNumber = 1;
+    private const int skillNumber = 2;
     public GameObject[] habilidades;
     public Habilidad[] skillScripts;
     private float[] coolDown;
@@ -52,6 +52,8 @@ public class ENSpiderQueen : ENComportamiento
         estadisticas = GetComponent<ENEstadisticas>();
         this.skillScripts[0] = new ENDBDisparo();
         this.skillScripts[0].Init(this.gameObject, skillThrower);
+        this.skillScripts[1] = new ENSpiderArea();
+        this.skillScripts[1].Init(this.gameObject, skillThrower);
 
         //EstablecerCanvas();
 	}
@@ -98,7 +100,7 @@ public class ENSpiderQueen : ENComportamiento
                     this.skillScripts[0].useWithCooldown();
                     break;
                 case 1:
-                    this.skillScripts[0].useWithCooldown();
+                    this.skillScripts[1].useWithCooldown();
                     //this.skillScripts[1].useWithCooldown(); no implementado todavía
                     break;
                 default:// No hago nada

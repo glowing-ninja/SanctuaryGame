@@ -7,9 +7,9 @@ public class ENMovimiento : Pathfinding
     //Habilidades
     public GameObject[] habilidades;
     public Habilidad[] skillScripts;
-    private const int SkillNumber = 1;
-    private float[] cooldown;
-    private SkillThrower skillThrower;
+    public const int SkillNumber = 1;
+    protected float[] cooldown;
+    public SkillThrower skillThrower;
 
     //Patrulla
     public float distanciaPatrulla;
@@ -30,14 +30,16 @@ public class ENMovimiento : Pathfinding
     public Vector3 posPatrulla;
     public Attributtes tarAttri;
 
-    public float distancia;
-    public bool moverPatrulla = false;
+    //public float distancia;
+    //public float pruebas;
+    protected bool moverPatrulla = false;
+    public bool destoryWhenSikill = false;
     #endregion
 
     #region Funciones Iniciales
     void Awake()
     {
-        posicionInicial = transform.position;
+        /*posicionInicial = transform.position;
         if (GetComponent<NetworkView>().isMine)
         {
             habilidades = new GameObject[SkillNumber];
@@ -46,12 +48,12 @@ public class ENMovimiento : Pathfinding
         else
         {
             enabled = false;
-        }
+        }*/
     }
     // Use this for initialization
     void Start()
     {
-        target = null;
+        /*target = null;
         posPatrulla = Vector3.zero;
 
         estadisticas = GetComponent<ENEstadisticas>();
@@ -60,10 +62,10 @@ public class ENMovimiento : Pathfinding
             pathfinder = GetComponentInParent<Pathfinder>();
 
         //Habilidades
-        this.cooldown = new float[SkillNumber];
+        /*this.cooldown = new float[SkillNumber];
         this.skillThrower = GetComponent<SkillThrower>();
         this.skillScripts[0] = new ENDBGolpe();
-        this.skillScripts[0].Init(this.gameObject, skillThrower);
+        this.skillScripts[0].Init(this.gameObject, skillThrower);*/
     }
     #endregion
     #region Funciones OVERRIDE
@@ -118,9 +120,10 @@ public class ENMovimiento : Pathfinding
     {
         if (EnRango(target.transform))
         {
-            // Ataco
-            //Debug.Log("Estoy atacando");
             skillScripts[0].useWithCooldown();
+            if (destoryWhenSikill)
+                estadisticas.PuntosSalud = -10;
+                //Destroy(this.gameObject);
         }
         else
         {
@@ -243,6 +246,7 @@ public class ENMovimiento : Pathfinding
     bool EnRango(Transform target)
     {
         float dist = Vector3.Distance(target.position, transform.position);
+        //pruebas = dist;
         if (dist > rangoAtaque) return false;
 
         return true;
@@ -275,7 +279,7 @@ public class ENMovimiento : Pathfinding
 
     bool HaLlegado(Vector3 posicion)
     {
-        distancia = Vector3.Distance(transform.position, posicion);
+        //distancia = Vector3.Distance(transform.position, posicion);
         if (Vector3.Distance(transform.position, posicion) <= 1.5f)
             return true;
         return false;

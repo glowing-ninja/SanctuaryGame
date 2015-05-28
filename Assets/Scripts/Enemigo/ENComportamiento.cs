@@ -6,8 +6,8 @@ public class ENComportamiento : MonoBehaviour {
     public Amenaza sisAmenaza;
 	public GameObject modelo;
 
-	protected ENEstadisticas estadisticas;
-	public Attributtes targetAttri;
+	public ENEstadisticas estadisticas;
+	protected Attributtes targetAttri;
 
 	public enum EstadosEnemigo {
 		none,
@@ -21,7 +21,7 @@ public class ENComportamiento : MonoBehaviour {
 	public EstadosEnemigo estadoActual;
 	
 	public GameObject target;
-	public GameObject grupo;
+	protected GameObject grupo;
 	
 	// Use this for initialization
 	void Start () {
