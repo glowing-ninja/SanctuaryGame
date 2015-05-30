@@ -42,8 +42,10 @@ public class SelectCharacter : MonoBehaviour, IPointerDownHandler {
 			btCrear.interactable = true;
 		} else {
 			playerName.text = "";
-			nuevoPJ.SetActive(true);
-			crearServidor.SetActive(false);
+			if (nuevoPJ != null && crearServidor != null) {
+				nuevoPJ.SetActive(true);
+				crearServidor.SetActive(false);
+			}
 		}
 	}
 
