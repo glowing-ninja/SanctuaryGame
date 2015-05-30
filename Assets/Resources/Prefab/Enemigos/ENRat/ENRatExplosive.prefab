@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sisAmenaza: {fileID: 0}
-  modelo: {fileID: 0}
+  modelo: {fileID: 132738}
   estadisticas: {fileID: 0}
   estadoActual: 1
   target: {fileID: 0}
