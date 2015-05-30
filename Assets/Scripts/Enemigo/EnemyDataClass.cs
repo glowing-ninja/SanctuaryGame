@@ -10,6 +10,7 @@ public class EnemyDataClass
 	private float positionZ;
 	public bool isDead;
 	public string enemyPath;
+	public int level;
 
 	[NonSerialized]
 	public NetworkViewID viewID;

@@ -222,7 +222,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 					GetComponent<NetworkView>().RPC ("SendMap", RPCMode.OthersBuffered, serializedMap, mapGenerator.depth, mapGenerator.actual, nPlayer.ToString());
 					for(int i = 0; i < mapGenerator.MazmorraCompleta[0].enemyDatabase.Size; i++)
 					{
-						GetComponent<NetworkView>().RPC ("PlaceEnemiesNetwork", RPCMode.AllBuffered, mapGenerator.MazmorraCompleta[0].enemyDatabase.getPositionAt(i), "Enemigo",  0, i, mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].viewID, "Level_0",mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].enemyPath );
+						GetComponent<NetworkView>().RPC ("PlaceEnemiesNetwork", RPCMode.AllBuffered, mapGenerator.MazmorraCompleta[0].enemyDatabase.getPositionAt(i), "Enemigo",  0, i, mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].viewID, "Level_0",mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].enemyPath, mapGenerator.MazmorraCompleta[0].enemyDatabase.EnemyList[i].level );
 					}
 				}
 			}
@@ -464,7 +464,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 	}
 	
 	[RPC]
-	public void PlaceEnemiesNetwork(Vector3 pos, string name, int level, int index,NetworkViewID viewID, string parentName, string prefabPath)
+	public void PlaceEnemiesNetwork(Vector3 pos, string name, int level, int index,NetworkViewID viewID, string parentName, string prefabPath, int statLevel)
 	{
 		GameObject parentObject = GameObject.Find(parentName);
 		
@@ -478,6 +478,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			nView.viewID = viewID;
 			aux.name = name + "_" + level + "_" + index;
 			aux.transform.SetParent(parent, false);
+			aux.GetComponent<ENEstadisticas>().Nivel = statLevel;
 			if(mapGenerator)
 			{
 				mapGenerator.MazmorraCompleta[level].enemyDatabase.EnemyList[index].enemy = aux;

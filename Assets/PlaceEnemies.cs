@@ -30,6 +30,7 @@ public class PlaceEnemies  : MonoBehaviour{
 				auxViewID = Network.AllocateViewID();
 				mapa.enemyDatabase.AddEnemy(i, pos, auxViewID);
 				mapa.enemyDatabase.EnemyList[i].enemyPath = this.enemyPaths[(int)Random.Range(0, this.enemyPaths.Length)];
+				mapa.enemyDatabase.EnemyList[i].level = Utils.player.GetComponent<Attributtes>().level;
 			}
 		}
 		if (paredes) {
@@ -69,6 +70,8 @@ public class PlaceEnemies  : MonoBehaviour{
 					mapa.enemyDatabase.AddEnemy(i, pos, auxViewID);
 					mapa.enemyDatabase.EnemyList[i].enemyPath = this.enemyPaths[(int)Random.Range(0, this.enemyPaths.Length)];
 				}
+				mapa.enemyDatabase.EnemyList[i].level = Utils.player.GetComponent<Attributtes>().level;
+
 				//pos = new Vector3 (Random.Range (5, 16) * Random.Range (1, 10), 0.5f, Random.Range (5, 16) * Random.Range (1, 10));
 				
 			}
@@ -112,6 +115,8 @@ public class PlaceEnemies  : MonoBehaviour{
 					mapa.enemyDatabase.AddEnemy(i, pos, auxViewID);
 					mapa.enemyDatabase.EnemyList[i].enemyPath = this.enemyPaths[(int)Random.Range(0, this.enemyPaths.Length)];
 				}
+				mapa.enemyDatabase.EnemyList[i].level = Utils.player.GetComponent<Attributtes>().level;
+
 				//pos = new Vector3 (Random.Range (5, 16) * Random.Range (1, 10), 0.5f, Random.Range (5, 16) * Random.Range (1, 10));
 				
 			}
