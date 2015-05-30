@@ -29,12 +29,14 @@ public class HandleENDisparo : SkillHandler {
 			}
 			
 		}
-		GameObject fb = gameObject.transform.GetChild (0).gameObject;
-		fb.transform.parent = null;
-		fb.GetComponent<ParticleSystem>().Stop ();
+        if (gameObject.transform.childCount > 0)
+        {
+            GameObject fb = gameObject.transform.GetChild(0).gameObject;
+            fb.transform.parent = null;
+            fb.GetComponent<ParticleSystem>().Stop();
+            Destroy(fb, 3f);
+        }
 		Destroy (gameObject);
-		Destroy (fb, 3f);
-		
 	}
 	
 	override public void Init(GameObject newPlayer, int skillID)
