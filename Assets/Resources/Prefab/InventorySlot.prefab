@@ -48,6 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d27d0eb15a64614a70aab28c954c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  type: 0
+  subType: 0
+  basicGold: 0
+  totalGold: 0
+  rarity: 0
 --- !u!114 &11497714
 MonoBehaviour:
   m_ObjectHideFlags: 1

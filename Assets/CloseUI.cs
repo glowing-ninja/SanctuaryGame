@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.ImageEffects;
 
 public class CloseUI : MonoBehaviour {
 
@@ -25,6 +26,18 @@ public class CloseUI : MonoBehaviour {
 		}
 	}
 
+	public void closeScapeMenu () {
+		menuEscape.SetActive(false);
+		GetComponent<Grayscale>().enabled = false;
+		GetComponent<Blur>().enabled = false;
+		if(menuEscape.GetComponent<ManageEscapeMenu>().GetCurrentMenu() != null)
+		{
+			menuEscape.GetComponent<ManageEscapeMenu>().GetCurrentMenu().SetActive(false);
+			menuEscape.GetComponent<ManageEscapeMenu>().SetCurrentMenu(null);
+		}
+		isMenuEscapeOpen = false;
+	}
+	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
@@ -36,17 +49,22 @@ public class CloseUI : MonoBehaviour {
 				isPanelOpen = false;
 			else if(isMenuEscapeOpen)
 			{
-				menuEscape.SetActive(false);
+				closeScapeMenu();
+				/*menuEscape.SetActive(false);
+				GetComponent<Grayscale>().enabled = false;
+				GetComponent<Blur>().enabled = false;
 				if(menuEscape.GetComponent<ManageEscapeMenu>().GetCurrentMenu() != null)
 				{
 					menuEscape.GetComponent<ManageEscapeMenu>().GetCurrentMenu().SetActive(false);
 					menuEscape.GetComponent<ManageEscapeMenu>().SetCurrentMenu(null);
 				}
-				isMenuEscapeOpen = false;
+				isMenuEscapeOpen = false;*/
 			}
 			else
 			{
 				menuEscape.SetActive(true);
+				GetComponent<Grayscale>().enabled = true;
+				GetComponent<Blur>().enabled = true;
 				isMenuEscapeOpen = true;
 			}
 				

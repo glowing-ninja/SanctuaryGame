@@ -5,6 +5,7 @@ using System.Collections;
 public class SkillTooltip : MonoBehaviour {
 
 	public void Init (Sprite icon, string name, string description, string type, float cd) {
+		Destroy(gameObject, 3f);
 		transform.FindChild ("Skill").GetComponent<Image> ().sprite = icon;
 		transform.FindChild ("lb_Name").GetComponent<Text> ().text = name;
 		transform.FindChild ("lb_Description").GetComponent<Text> ().text = description;
