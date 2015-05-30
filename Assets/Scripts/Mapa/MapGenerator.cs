@@ -5,10 +5,11 @@ using System.Collections;
 public class MapGenerator : MonoBehaviour {
 
 	public Map[] MazmorraCompleta;
-	public static int TAM = 10;
+	public static int TAM = 5;
 	public int actual;
 	public int depth;
 	public GameObject Dungeon;
+	public GameObject mazDown;
 	//public newPiezaMap[,] mapa;
 
 	public GameObject wall;
@@ -27,9 +28,9 @@ public class MapGenerator : MonoBehaviour {
 		
 		Map m = new Map();
 
-		m.mapa [0, 0] = new newPiezaMap (true, false, true, true);
+		m.mapa [0, 0] = new newPiezaMap (true, false, false, true);
 		m.mapa [0, TAM -1] = new newPiezaMap (false, true, false, true);
-		m.mapa [TAM - 1, 0] = new newPiezaMap (true, false, true, true);
+		m.mapa [TAM - 1, 0] = new newPiezaMap (true, false, true, false);
 		m.mapa [TAM - 1, TAM - 1] = new newPiezaMap (false, true, true, false);
 		
 		int i, j;
@@ -161,8 +162,18 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 		}
-		
-		
+		float tpX = TAM-1, tpY = TAM-1;
+		if (Random.Range(0,2) == 0) {
+			tpX = TAM-1;
+			tpY = Random.Range(0, TAM);
+		}
+		else {
+			tpY = TAM-1;
+			tpX = Random.Range(0, TAM);
+		}
+		Vector3 tpPos = new Vector3(tpX * 20 + 10, 0f, tpY * 20 + 10);
+		GameObject tp = Instantiate(mazDown, tpPos, mazDown.transform.rotation) as GameObject;
+		tp.transform.SetParent(parent, false);
 	}
 
 	public void SpawnChest(int levelIndex, Transform parent)

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlaceEnemies  : MonoBehaviour{
 	
-	public int numItems = 20;
+	public int numItems = 10;
 	public bool esquinas;
 	public bool paredes;
 	public bool centro = true;
@@ -24,8 +24,8 @@ public class PlaceEnemies  : MonoBehaviour{
 
 		if (centro) {
 			for (int i = 0; i < numItems; i++) {
-				int x = Random.Range(0, 10);
-				int z = Random.Range(0, 10);
+				int x = Random.Range(1, 5);
+				int z = Random.Range(1, 5);
 				pos = new Vector3 (x * 20 + Random.Range (6, 16), 0.0f, z * 20 + Random.Range (6, 16));
 				auxViewID = Network.AllocateViewID();
 				mapa.enemyDatabase.AddEnemy(i, pos, auxViewID);
