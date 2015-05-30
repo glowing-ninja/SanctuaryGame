@@ -288,9 +288,16 @@ public class Attributtes : MonoBehaviour {
 	}
 
 	public void addExp(int exp) {
+		int auxExp = exp;
 		if (level < 10/*LEVEL_MAXIMO*/) {
 			expActual += exp;
 			if (expActual >= expTotal) {
+				expActual = expActual - expTotal;
+				levelUp();
+			}
+
+			while(expActual >= expTotal && level < 10)
+			{
 				expActual = expActual - expTotal;
 				levelUp();
 			}

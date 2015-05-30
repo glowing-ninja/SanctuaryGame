@@ -93,25 +93,7 @@ public class ENDeath : MonoBehaviour {
 
 	[RPC]
 	void SpawnChestAcrossTheNetwork(string parentName) {
-		GameObject obj;
-		Transform parentTransform = null;
-		
-		obj = GameObject.Find("parentName") as GameObject;
-		if(obj != null)
-			parentTransform = obj.transform;
-		
-		ChestSpawn.Spawn(1, gameObject.transform.position, parentTransform);
-	}
-	
-	[RPC]
-	void ApplyDamageOnOthers(int DmgRecibido)
-	{
-		stats.PuntosSalud = stats.PuntosSalud - DmgRecibido;
-	}
-	
-	[RPC]
-	void DestroyAccrosTheNetwork()
-	{
+
 		int exp = 0;
 		switch(stats.Nivel) {
 		case 1:
@@ -141,12 +123,37 @@ public class ENDeath : MonoBehaviour {
 		case 9:
 			exp = 51200;
 			break;
+		case 10:
+			exp = 51200;
+			break;
 		}
 		Utils.player.GetComponent<Attributtes>().addExp(exp);
 		
 		//generateSlots gs = GameObject.Find("InventoryPanel").GetComponent<generateSlots>();
 		//gs.AddGold(Utils.player.GetComponent<Attributtes>().level * 5);
 		Utils.player.GetComponent<Attributtes>().addGold(stats.Nivel * 50);
+
+
+		GameObject obj;
+		Transform parentTransform = null;
+		
+		obj = GameObject.Find("parentName") as GameObject;
+		if(obj != null)
+			parentTransform = obj.transform;
+		
+		ChestSpawn.Spawn(1, gameObject.transform.position, parentTransform);
+	}
+	
+	[RPC]
+	void ApplyDamageOnOthers(int DmgRecibido)
+	{
+		stats.PuntosSalud = stats.PuntosSalud - DmgRecibido;
+	}
+	
+	[RPC]
+	void DestroyAccrosTheNetwork()
+	{
+
 		
 		//Network.Destroy(gameObject);
 
