@@ -75,7 +75,6 @@ public class Tragaperras : MonoBehaviour {
 
 	public void enchufarTragaperras () {
 		if (!enMarcha) {
-			atr.addGold(200);
 			if (100 <= atr.inventory.GetComponent<generateSlots>().Gold) {
 				atr.addGold(-100);
 				lbPlayerGold.GetComponent<Text>().text = atr.getGold() + "";
