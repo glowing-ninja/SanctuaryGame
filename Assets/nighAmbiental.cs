@@ -24,6 +24,14 @@ public class nighAmbiental : MonoBehaviour {
 			fx_thunder.Play();
 			yield return new WaitForSeconds(0.2f);
 			sun.intensity -= 3f;
+
+			yield return new WaitForSeconds(0.5f);
+
+			if (Random.Range(0,100) > 0) {
+				sun.intensity += 3f;
+				yield return new WaitForSeconds(0.1f);
+				sun.intensity -= 3f;
+			}
 		}
 	}
 }

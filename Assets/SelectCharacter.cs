@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class SelectCharacter : MonoBehaviour {
@@ -17,9 +18,12 @@ public class SelectCharacter : MonoBehaviour {
 	}
 
 	public void SelectThis () {
-		p1.GetComponent<Image> ().color = Color.white;
-		p2.GetComponent<Image> ().color = Color.white;
-		p3.GetComponent<Image> ().color = Color.white;
+		if (p1.GetComponent<EventTrigger>().isActiveAndEnabled)
+			p1.GetComponent<Image> ().color = Color.white;
+		if (p2.GetComponent<EventTrigger>().isActiveAndEnabled)
+			p2.GetComponent<Image> ().color = Color.white;
+		if (p3.GetComponent<EventTrigger>().isActiveAndEnabled)
+			p3.GetComponent<Image> ().color = Color.white;
 
 		this.GetComponent<Image> ().color = Color.blue;
 
