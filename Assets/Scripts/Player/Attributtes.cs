@@ -413,6 +413,9 @@ public class Attributtes : MonoBehaviour {
 	void ApplyBuff(string nameBuff, int amount, float duration, int id) {
 		//Buff b = UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent (gameObject, "Assets/Scripts/Player/Attributtes.cs (336,12)", nameBuff) as Buff;
 		//b.Init (amount, duration, id);
+		//Types.get
+		Buff b = this.gameObject.AddComponent(System.Type.GetType (nameBuff)) as Buff;
+		b.Init(amount, duration, id, this.gameObject);
 	}
 
 	[RPC]
@@ -430,6 +433,8 @@ public class Attributtes : MonoBehaviour {
 	[RPC]
 	public void Heal(int amount, int id) {
 		ApplyBuff ("BuffHealthModifier", amount, 0, id);
+		//Buff b = gameObject.AddComponent < BuffHealthModifier>();
+		//b.Init (amount, 0,id);
 	}
 
 	[RPC]
