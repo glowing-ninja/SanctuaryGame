@@ -536,7 +536,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 		
 		byte[] serializedMap = this.MapSerialize (mapGenerator.MazmorraCompleta [actualLevel]);
 		//		byte[] serializedChest = this.ChestDatabaseSerialize (mapGenerator.chestDatabase);
-		GetComponent<NetworkView>().RPC ("SendMap", RPCMode.AllBuffered, serializedMap, mapGenerator.depth, actualLevel, nPlayer.ToString());
+		GetComponent<NetworkView>().RPC ("SendMap", RPCMode.OthersBuffered, serializedMap, mapGenerator.depth, actualLevel, nPlayer.ToString());
 		for(int i = 0; i < mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.Size; i++)
 		{
 			GetComponent<NetworkView>().RPC ("PlaceEnemiesNetwork", RPCMode.AllBuffered, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.getPositionAt(i), "Enemigo", actualLevel, i, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.EnemyList[i].viewID, "Level_" + actualLevel, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.EnemyList[i].enemyPath, mapGenerator.MazmorraCompleta[actualLevel].enemyDatabase.EnemyList[i].level);
