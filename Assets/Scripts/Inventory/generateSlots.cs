@@ -8,7 +8,7 @@ public class generateSlots : MonoBehaviour {
 	public int itemPorFila = 6;
 	public int total_slots = 18;
 	public Item[] inventory;
-	public Image inventoryPanel;
+	public GameObject inventoryPanel;
 
 	public int Gold = 0;
 
@@ -35,7 +35,7 @@ public class generateSlots : MonoBehaviour {
 			else {
 				Gold += g;
 			}
-			if (inventoryPanel.IsActive())
+			if (inventoryPanel.activeInHierarchy)
 				inventoryPanel.transform.GetChild(0).GetComponent<Text>().text = Gold + "";
 		}
 	}
@@ -45,7 +45,7 @@ public class generateSlots : MonoBehaviour {
 			for (int j = 0; j < total_slots; j++) {
 				if (inventory[j] == null) {
 					inventory[j] = i;
-					if (inventoryPanel.IsActive())
+					if (inventoryPanel.activeInHierarchy)
 						inventoryPanel.transform.GetChild(j+1).GetComponent<ShowItemOnOver>().i = j;
 					j = total_slots + 1;
 				}
