@@ -357,6 +357,10 @@ public class Attributtes : MonoBehaviour {
 		return armor + bonusArmor + equipamiento.GetComponent<PlayerEquip>().equipment.getTotalArmor();
 	}
 
+	public int getGold () {
+		return inventory.GetComponent<generateSlots>().Gold;
+	}
+
 	public void addGold(int g) {
 		inventory.GetComponent<generateSlots>().AddGold(g);
 
