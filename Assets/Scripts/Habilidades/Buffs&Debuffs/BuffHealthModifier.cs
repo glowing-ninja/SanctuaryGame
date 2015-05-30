@@ -22,7 +22,7 @@ public class BuffHealthModifier : Buff {
 
     public bool doDamage(int dmg, GameObject jugador)
     {
-        return gameObject.GetComponentInParent<ENEstadisticas>().ApplyDamage(dmg, Utils.Element.FUEGO, 30f);
+        return gameObject.GetComponentInParent<ENEstadisticas>().ApplyDamage(jugador,dmg, Utils.Element.FUEGO, 30f,0f);
         Destroy(this);
     }
 
