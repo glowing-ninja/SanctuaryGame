@@ -3227,7 +3227,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CREAR PARTIDA
+  m_Text: CONTINUAR PARTIDA
 --- !u!222 &977618968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6129,7 +6129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NUEVO PERSONAJE
+  m_Text: NUEVA PARTIDA
 --- !u!222 &1719680336
 CanvasRenderer:
   m_ObjectHideFlags: 0
