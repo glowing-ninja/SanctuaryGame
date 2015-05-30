@@ -377,7 +377,7 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129718}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
@@ -433,7 +433,7 @@ MonoBehaviour:
   velocidadMovPatrulla: 1
   velocidadMovAtaque: 7
   velocidadMovReset: 10
-  rangoAtaque: 1.5
+  rangoAtaque: 2
   posicionInicial: {x: 0, y: 0, z: 0}
   posPatrulla: {x: 0, y: 0, z: 0}
   tarAttri: {fileID: 0}

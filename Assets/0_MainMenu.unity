@@ -414,7 +414,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1505636827}
   m_OnClick:
     m_PersistentCalls:
@@ -1780,7 +1780,12 @@ MonoBehaviour:
   p2: {fileID: 1163438141}
   p3: {fileID: 352945121}
   selected: 0
+  selectedColor: {r: .551470578, g: .072988756, b: .072988756, a: .968627453}
+  normalColor: {r: .904411793, g: .392355114, b: .392355114, a: .509803951}
   playerName: {fileID: 151361513}
+  btCrear: {fileID: 86649918}
+  nuevoPJ: {fileID: 1670624630}
+  crearServidor: {fileID: 1461873198}
 --- !u!114 &352945126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1792,25 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 352945125}
-          m_MethodName: SelectThis
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-              Culture=neutral, PublicKeyToken=null
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &359617957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2656,7 +2643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 129501692}
+      - m_Target: {fileID: 1461873198}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -4411,7 +4398,12 @@ MonoBehaviour:
   p2: {fileID: 1163438141}
   p3: {fileID: 352945121}
   selected: 0
+  selectedColor: {r: .551470578, g: .072988756, b: .072988756, a: .968627453}
+  normalColor: {r: .904411793, g: .392355114, b: .392355114, a: .509803951}
   playerName: {fileID: 151361513}
+  btCrear: {fileID: 86649918}
+  nuevoPJ: {fileID: 1670624630}
+  crearServidor: {fileID: 1461873198}
 --- !u!114 &1163438146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4423,25 +4415,7 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1163438145}
-          m_MethodName: SelectThis
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-              Culture=neutral, PublicKeyToken=null
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1178889752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,7 +4499,12 @@ MonoBehaviour:
   p2: {fileID: 1178889752}
   p3: {fileID: 1436234006}
   selected: 0
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
   playerName: {fileID: 713982533}
+  btCrear: {fileID: 0}
+  nuevoPJ: {fileID: 0}
+  crearServidor: {fileID: 0}
 --- !u!114 &1178889756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4632,8 +4611,13 @@ MonoBehaviour:
   p1: {fileID: 1219078614}
   p2: {fileID: 1163438141}
   p3: {fileID: 352945121}
-  selected: 1
+  selected: 0
+  selectedColor: {r: .551470578, g: .072988756, b: .072988756, a: .968627453}
+  normalColor: {r: .904411793, g: .392355114, b: .392355114, a: .509803951}
   playerName: {fileID: 151361513}
+  btCrear: {fileID: 86649918}
+  nuevoPJ: {fileID: 1670624630}
+  crearServidor: {fileID: 1461873198}
 --- !u!114 &1219078619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4645,25 +4629,7 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1219078618}
-          m_MethodName: SelectThis
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-              Culture=neutral, PublicKeyToken=null
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1230016742
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,7 +5038,12 @@ MonoBehaviour:
   p2: {fileID: 1178889752}
   p3: {fileID: 1436234006}
   selected: 0
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
   playerName: {fileID: 713982533}
+  btCrear: {fileID: 0}
+  nuevoPJ: {fileID: 0}
+  crearServidor: {fileID: 0}
 --- !u!114 &1436234010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6751,7 +6722,12 @@ MonoBehaviour:
   p2: {fileID: 1178889752}
   p3: {fileID: 1436234006}
   selected: 1
+  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
   playerName: {fileID: 713982533}
+  btCrear: {fileID: 0}
+  nuevoPJ: {fileID: 0}
+  crearServidor: {fileID: 0}
 --- !u!114 &1855049117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7845,7 +7821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2139329651
 RectTransform:
   m_ObjectHideFlags: 0

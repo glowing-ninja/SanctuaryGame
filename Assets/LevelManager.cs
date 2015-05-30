@@ -86,7 +86,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 		else
 		{
 			//Si tenemos una mazmorra abierta e intentamos entrar en la misma, nos desplazamos al primer nivel
-			Utils.player.transform.position = new Vector3(-10f + Utils.mapOffset, 1f, 10f + Utils.mapOffset);
+			Utils.player.transform.position = new Vector3(20f + Utils.mapOffset, 1f, 10f + Utils.mapOffset);
 			GetComponent<NetworkView>().RPC("SetIsInDungeon", RPCMode.Server, Network.player, true, (int)currentDungeon, 0);
 			if(!Network.isServer)
 			{
@@ -135,7 +135,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 				else
 				{
 					actual++;
-					Vector3 newPos = new Vector3(10f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
+					Vector3 newPos = new Vector3(20f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
 					Utils.player.transform.position = newPos;
 					mg.actual = actual;
 					if(Network.isServer)
@@ -518,7 +518,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 						break;
 				}
 				GameObject instantiantedDungeon = Instantiate(dungeonTerrain, new Vector3(100 * actualLevel, 0, 100 * actualLevel), Quaternion.identity) as GameObject;
-				instantiantedDungeon.transform.position = new Vector3(250 * (actualLevel + 1), 0, 250 * (actualLevel + 1));
+				instantiantedDungeon.transform.position = new Vector3(250 * (actualLevel + 1), 0,250 * (actualLevel + 1));
 				instantiantedDungeon.name = "Level_" + actualLevel;
 
 				pEnemies.Place(instantiantedDungeon.transform, mapGenerator.MazmorraCompleta[actualLevel]);
@@ -634,7 +634,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 
 			if(Network.player.ToString() == nPlayer)
 			{
-				Vector3 newPos = new Vector3(-8f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
+				Vector3 newPos = new Vector3(20f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
 				Utils.player.transform.position = newPos;
 			}
 		}

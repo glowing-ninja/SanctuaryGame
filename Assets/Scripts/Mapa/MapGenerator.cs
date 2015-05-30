@@ -107,7 +107,7 @@ public class MapGenerator : MonoBehaviour {
 			int lv = 1;
 			
 			depth = Mathf.Max (2, 1 + lv / 10 );
-			depth = 2;
+			depth = 3;
 
 			MazmorraCompleta = new Map[depth];
 			GameObject terrain = GameObject.Find("Level_0") as GameObject;
@@ -197,7 +197,7 @@ public class MapGenerator : MonoBehaviour {
 			{
 				if(actual != -1)
 				{
-					Utils.player.transform.position = new Vector3(-8f + 250 * (actual + 1), 1, 10f + 250 * (actual + 1));
+					Utils.player.transform.position = new Vector3(15f + 250 * (actual + 1), 1, 10f + 250 * (actual + 1));
 					
 
 				}
