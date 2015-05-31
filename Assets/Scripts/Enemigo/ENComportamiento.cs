@@ -133,4 +133,9 @@ public class ENComportamiento : MonoBehaviour {
 	public GameObject GetModelo() {
 		return modelo;
 	}
+
+    public virtual bool DeadthInExplosion()
+    {
+        return false;
+    }
 }

@@ -211,10 +211,10 @@ public class ENBasico : Pathfinding {
 			}
 			break;
 		case 1: // ataque
-			Move(velocidadMovAtaque);
+			Move(velocidadMovAtaque,false);
 			break;
 		case 2: // reset
-			Move (velocidadMovReset);
+			Move (velocidadMovReset,true);
 			break;
 		default:
 			break;

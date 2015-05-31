@@ -431,12 +431,13 @@ MonoBehaviour:
   pausaPatrulla: 5
   distanciaMaxima: 100
   velocidadMovPatrulla: 1
-  velocidadMovAtaque: 7
+  velocidadMovAtaque: 3
   velocidadMovReset: 10
-  rangoAtaque: 2
+  rangoAtaque: 2.5
   posicionInicial: {x: 0, y: 0, z: 0}
   posPatrulla: {x: 0, y: 0, z: 0}
   tarAttri: {fileID: 0}
+  pruebas: 0
   destoryWhenSikill: 1
 --- !u!114 &11443914
 MonoBehaviour:

@@ -18,15 +18,23 @@ public class Pathfinding : ENComportamiento {
     }
 
     //A test move function, can easily be replaced
-    public void Move(float velocidad)
+    public void Move(float velocidad, bool reset)
     {
-        if (Path.Count > 0)
+        if (!reset && PuedoVerTarget())
         {
-			transform.position = Vector3.MoveTowards(transform.position, Path[0], Time.deltaTime * velocidad);
-			RotarModelo(Path[0]);
-            if (Vector3.Distance(transform.position, Path[0]) < 0.4F)
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * velocidad);
+            RotarModelo(target.transform.position);
+        }
+        else
+        {
+            if (Path.Count > 0)
             {
-                Path.RemoveAt(0);
+                transform.position = Vector3.MoveTowards(transform.position, Path[0], Time.deltaTime * velocidad);
+                RotarModelo(Path[0]);
+                if (Vector3.Distance(transform.position, Path[0]) < 0.4F)
+                {
+                    Path.RemoveAt(0);
+                }
             }
         }
     }
@@ -49,5 +57,23 @@ public class Pathfinding : ENComportamiento {
             //Path[0] = new Vector3(Path[0].x, Path[0].y - 1, Path[0].z);
             //Path[Path.Count - 1] = new Vector3(Path[Path.Count - 1].x, Path[Path.Count - 1].y - 1, Path[Path.Count - 1].z);
         }
+    }
+
+    private bool PuedoVerTarget()
+    {
+        RaycastHit hit;
+        Vector3 direccion = target.transform.position - transform.position;
+        direccion.y += 1.0f;
+        float dist = Vector3.Distance(target.transform.position, transform.position) + 5f;
+        Ray lookRay = new Ray(transform.position, direccion);
+
+        if (Physics.Raycast(lookRay, out hit, dist))
+        {
+            if (hit.collider.tag != "Destructible")
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

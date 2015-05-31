@@ -31,9 +31,10 @@ public class ENMovimiento : Pathfinding
     public Attributtes tarAttri;
 
     //public float distancia;
-    //public float pruebas;
+    public float pruebas;
     protected bool moverPatrulla = false;
     public bool destoryWhenSikill = false;
+    private bool yaMuerto = false;
     #endregion
 
     #region Funciones Iniciales
@@ -118,12 +119,17 @@ public class ENMovimiento : Pathfinding
     }
     public override void Atacar()
     {
+
         if (EnRango(target.transform))
         {
-            skillScripts[0].useWithCooldown();
+            if (!yaMuerto)
+                skillScripts[0].useWithCooldown();
             if (destoryWhenSikill)
+            {
                 estadisticas.PuntosSalud = -10;
-                //Destroy(this.gameObject);
+                yaMuerto = true;
+            }
+            //Destroy(this.gameObject);
         }
         else
         {
@@ -164,6 +170,11 @@ public class ENMovimiento : Pathfinding
                 //FindPath (transform.position, target.transform.position);
             }
         }
+    }
+
+    public override bool DeadthInExplosion()
+    {
+        return yaMuerto;
     }
     #endregion
     #region CORRUTINAS
@@ -246,7 +257,7 @@ public class ENMovimiento : Pathfinding
     bool EnRango(Transform target)
     {
         float dist = Vector3.Distance(target.position, transform.position);
-        //pruebas = dist;
+        pruebas = dist;
         if (dist > rangoAtaque) return false;
 
         return true;
@@ -267,10 +278,10 @@ public class ENMovimiento : Pathfinding
                 }
                 break;
             case 1: // ataque
-                Move(velocidadMovAtaque);
+                Move(velocidadMovAtaque,false);
                 break;
             case 2: // reset
-                Move(velocidadMovReset);
+                Move(velocidadMovReset,true);
                 break;
             default:
                 break;

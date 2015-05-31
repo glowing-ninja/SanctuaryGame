@@ -9,11 +9,13 @@ public class ENDeath : MonoBehaviour {
 	protected PlayerDataBase playerDB;
 	public int level;
 	public int index;
+    private bool deadthInExplosion = false;
     
 	
 	void Start() {
 		stats = gameObject.GetComponent<ENEstadisticas> ();
         enemigo = gameObject.GetComponent<ENComportamiento>();
+        
 		this.playerDB = GameObject.Find("MultiplayerManager").GetComponent<PlayerDataBase>();
 		
 		char[] separator = {'_'};
@@ -45,6 +47,7 @@ public class ENDeath : MonoBehaviour {
 				//networkView.RPC ("DestroyAccrosTheNetwork", RPCMode.AllBuffered);
 				
 				mG.MazmorraCompleta[this.level].enemyDatabase.EnemyList[this.index].isDead = true;
+                deadthInExplosion = enemigo.DeadthInExplosion();
 				GetComponent<NetworkView>().RPC ("SpawnChestAcrossTheNetwork", RPCMode.All, parentName);
 				GetComponent<NetworkView>().RPC ("DestroyAccrosTheNetwork",RPCMode.AllBuffered);
 
@@ -94,7 +97,10 @@ public class ENDeath : MonoBehaviour {
 	[RPC]
 	void SpawnChestAcrossTheNetwork(string parentName) {
 
+        if (deadthInExplosion)
+            return;
 		int exp = 0;
+        
 		switch(stats.Nivel) {
 		case 1:
 			exp = 50;
@@ -127,6 +133,7 @@ public class ENDeath : MonoBehaviour {
 			exp = 51200;
 			break;
 		}
+        
 		Utils.player.GetComponent<Attributtes>().addExp(exp);
 		
 		//generateSlots gs = GameObject.Find("InventoryPanel").GetComponent<generateSlots>();
