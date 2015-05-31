@@ -34,6 +34,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 	
 	public void EnterDungeon(Utils.DungeonType nextDungeon)
 	{
+		//ShowBlackPanel.ShowBlackScreen ();
 		
 		//Puede que nos interese volver al nivel principal
 		if(nextDungeon == Utils.DungeonType.NONE)
@@ -42,7 +43,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 		}
 		else if(this.currentDungeon == Utils.DungeonType.NONE)
 		{
-			StartCoroutine("OscurecerPantalla");
+			//StartCoroutine("OscurecerPantalla");
 			
 			//Si no tenemos una mazmorra abierta, creamos la mazmorra y nos desplazamos al primer nivel
 			if(Network.isServer)
@@ -101,10 +102,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 	
 	public void SwitchDungeonLevel(bool nextLevel)
 	{
-		
-		
 		GameObject dungeon = GameObject.Find ("Dungeon");
-		
 		
 		if(dungeon)
 		{
@@ -130,12 +128,17 @@ public class LevelManager : MonoSingleton<LevelManager> {
 						
 					}
 					mg.actual = actual;
+					//ShowBlackPanel.ShowBlackScreen();
+					Vector3 newPos = new Vector3(13f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
+					Utils.player.transform.position = newPos;
+					mg.actual = actual;
 					
 				}
 				else
 				{
+					//ShowBlackPanel.ShowBlackScreen();
 					actual++;
-					Vector3 newPos = new Vector3(20f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
+					Vector3 newPos = new Vector3(13f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
 					Utils.player.transform.position = newPos;
 					mg.actual = actual;
 					if(Network.isServer)
@@ -151,7 +154,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			else if (!nextLevel && actual > 0) 
 			{
 				actual--;
-				Vector3 newPos = new Vector3(190f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
+				Vector3 newPos = new Vector3(87f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
 				GameObject.FindGameObjectWithTag ("Player").transform.position = newPos;
 				mg.actual = actual;
 				
@@ -357,9 +360,9 @@ public class LevelManager : MonoSingleton<LevelManager> {
 	
 	
 	
-	IEnumerator OscurecerPantalla() {
-		GameObject negro = GameObject.Find ("BlackPanel");
-		float alpha = negro.GetComponent<Image> ().color.a;
+	//IEnumerator OscurecerPantalla() {
+		//GameObject negro = GameObject.Find ("BlackPanel");
+		//float alpha = negro.GetComponent<Image> ().color.a;
 		/*while (alpha < 1) {
 			alpha += 0.2f;
 			negro.GetComponent<Image> ().color = new Vector4(negro.GetComponent<Image> ().color.r,
@@ -377,7 +380,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			                                                 alpha);
 			yield return new WaitForSeconds (0.1f);
 		}*/
-		if(alpha < 1)
+		/*if(alpha < 1)
 			alpha = 1;
 		negro.GetComponent<Image> ().color = new Vector4(negro.GetComponent<Image> ().color.r,
 		                                                 negro.GetComponent<Image> ().color.g,
@@ -389,8 +392,8 @@ public class LevelManager : MonoSingleton<LevelManager> {
 		negro.GetComponent<Image> ().color = new Vector4(negro.GetComponent<Image> ().color.r,
 		                                                 negro.GetComponent<Image> ().color.g,
 		                                                 negro.GetComponent<Image> ().color.b,
-		                                                 alpha);
-	}
+		                                                 alpha);*/
+	//}
 	
 	public void DecrementPlayers()
 	{
