@@ -235,7 +235,14 @@ public class Pathfinder : MonoBehaviour
             if (endNode == null)
             {
                 endPosValid = false;
-                FindEndNode(endPos);
+                try
+                {
+                    FindEndNode(endPos);
+                } catch (Exception ex)
+                {
+                    return;
+                    //Debug.Log("Error --> " + ex.Message);
+                }
                 if (endNode == null)
                 {
                     //still no end node - we leave and sends an empty list

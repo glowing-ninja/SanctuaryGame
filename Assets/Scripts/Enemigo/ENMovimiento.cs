@@ -119,9 +119,9 @@ public class ENMovimiento : Pathfinding
 
     public override void DistanciaMaxima()
     {
-        if (estadoActual == EstadosEnemigo.ataque && target != null)
+        if ((estadoActual == EstadosEnemigo.ataque || estadoActual == EstadosEnemigo.moverATarget) && target != null)
         {
-            if (Vector3.Distance(transform.position, posicionInicial) > distanciaMaxima)
+            if (Vector3.Distance(transform.position, target.transform.position) > distanciaMaxima)
             {
                 EliminaTarget();
             }
