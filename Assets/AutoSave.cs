@@ -14,7 +14,9 @@ public class AutoSave : MonoBehaviour {
 		SQLite bd = GameObject.Find ("BD").GetComponent<SQLite> ();
 		while (true) {
 			yield return new WaitForSeconds(time2wait);
-			bd.updatePlayer();
+			LoomManager.Loom.QueueOnMainThread(() =>  {
+				bd.updatePlayer();
+			});
 		}
 	}
 }

@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 438212}
   - 33: {fileID: 3334404}
   - 23: {fileID: 2356920}
+  - 64: {fileID: 6482626}
   m_Layer: 0
   m_Name: iceCube
   m_TagString: Untagged
@@ -23,9 +24,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142510}
-  m_LocalRotation: {x: -4.32977997e-17, y: .707106709, z: .707106829, w: -4.32978063e-17}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -.461474925, y: .535761952, z: .535762072, w: .461474866}
+  m_LocalPosition: {x: -43.2188034, y: .0184334014, z: 97.0759354}
+  m_LocalScale: {x: 1.89087379, y: 1.5166409, z: 2.55230713}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -37,7 +38,7 @@ MeshRenderer:
   m_GameObject: {fileID: 142510}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: 4a529dba791a1ae448fe62e0dfdcf0fc, type: 2}
   m_SubsetIndices: 
@@ -59,6 +60,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142510}
+  m_Mesh: {fileID: 4300000, guid: 5b8123f2279f50441abf964c9fce7de0, type: 3}
+--- !u!64 &6482626
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 5b8123f2279f50441abf964c9fce7de0, type: 3}
 --- !u!1001 &100100000
 Prefab:
