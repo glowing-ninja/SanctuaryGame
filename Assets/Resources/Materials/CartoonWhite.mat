@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: CartoonWhite
-  m_Shader: {fileID: 4800000, guid: d5632f569264046a78884f81d85b0f96, type: 3}
+  m_Shader: {fileID: 4800000, guid: 9daebec1fe49d41b8bb767e19dcb5dc4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -41,4 +41,4 @@ Material:
       data:
         first:
           name: _OutlineColor
-        second: {r: .463235319, g: .463235319, b: .463235319, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
