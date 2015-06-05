@@ -56,7 +56,8 @@ public class CooldownManager
 		if (skill.Usar()) {
 			Attributtes atr = Utils.player.GetComponent<Attributtes>();
 			int dexSt = atr.getTotalStat(Utils.Stat.DESTREZA);
-			this.improvedCooldown = cooldownTime * (1.0f - ((float)dexSt * 5f / (atr.level / 100f)));
+			//this.improvedCooldown = cooldownTime * (1.0f - ((float)dexSt * 5f / atr.level / 100f));
+			this.improvedCooldown = cooldownTime * (1f - 5*(float)dexSt/20f/100f);
 			this.nextAttackTime = Time.time + this.improvedCooldown;
 			return true;
 		}
