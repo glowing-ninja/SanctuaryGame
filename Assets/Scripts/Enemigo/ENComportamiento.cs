@@ -59,29 +59,7 @@ public class ENComportamiento : MonoBehaviour {
     }
 	// Update is called once per frame
 	public virtual void Update () {
-		/*if (Network.isServer) {
-			switch (estadoActual) {
-			case EstadosEnemigo.inicio:
-				Iniciar ();
-				break;
-			case EstadosEnemigo.patrulla:
-				Patrullar ();
-				break;
-			case EstadosEnemigo.moverATarget:
-				MoverATarget ();
-				break;
-			case EstadosEnemigo.moverAInicio:
-				MoverAPuntoInicial ();
-				break;
-			case EstadosEnemigo.ataque:
-				Atacar ();
-				break;
-			default:
-				break;
-			}
-			ActualizarTarget ();
-			DistanciaMaxima ();
-		}*/
+
 	}
 	
 	public virtual void Iniciar(){}

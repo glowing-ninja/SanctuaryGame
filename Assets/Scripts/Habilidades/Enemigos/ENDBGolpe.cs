@@ -18,7 +18,7 @@ public class ENDBGolpe : Habilidad
 	
 	override public void Init(GameObject newPlayer, SkillThrower newSkillThrower)
 	{
-		this.cooldownTime = 1.5f;
+		this.cooldownTime = 2f;
 		base.Init(newPlayer, newSkillThrower);
 	}
 }

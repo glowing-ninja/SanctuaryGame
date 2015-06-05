@@ -14,7 +14,6 @@ public class ENMovimiento : Pathfinding
     //Patrulla
     public float distanciaPatrulla;
     public float pausaPatrulla;
-    //public float rangoAtaque;
     public float distanciaMaxima;
 
     //Movimiento
@@ -25,48 +24,28 @@ public class ENMovimiento : Pathfinding
     //Rango
     public float rangoAtaque;
 
+    public bool destoryWhenSikill = false;
+
     // Estas variables son publicas para depurar
     public Vector3 posicionInicial;
     public Vector3 posPatrulla;
     public Attributtes tarAttri;
 
     //public float distancia;
-    public float pruebas;
     protected bool moverPatrulla = false;
-    public bool destoryWhenSikill = false;
+    
     private bool yaMuerto = false;
     #endregion
 
     #region Funciones Iniciales
     void Awake()
     {
-        /*posicionInicial = transform.position;
-        if (GetComponent<NetworkView>().isMine)
-        {
-            habilidades = new GameObject[SkillNumber];
-            this.skillScripts = new Habilidad[SkillNumber];
-        }
-        else
-        {
-            enabled = false;
-        }*/
+        
     }
     // Use this for initialization
     void Start()
     {
-        /*target = null;
-        posPatrulla = Vector3.zero;
-
-        estadisticas = GetComponent<ENEstadisticas>();
-        sisAmenaza = GetComponent<Amenaza>();
-        if (pathfinder == null)
-            pathfinder = GetComponentInParent<Pathfinder>();
-
-        //Habilidades
-        /*this.cooldown = new float[SkillNumber];
-        this.skillThrower = GetComponent<SkillThrower>();
-        this.skillScripts[0] = new ENDBGolpe();
-        this.skillScripts[0].Init(this.gameObject, skillThrower);*/
+        
     }
     #endregion
     #region Funciones OVERRIDE
@@ -257,7 +236,6 @@ public class ENMovimiento : Pathfinding
     bool EnRango(Transform target)
     {
         float dist = Vector3.Distance(target.position, transform.position);
-        pruebas = dist;
         if (dist > rangoAtaque) return false;
 
         return true;
