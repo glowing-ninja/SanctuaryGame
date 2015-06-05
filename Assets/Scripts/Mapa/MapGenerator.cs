@@ -90,6 +90,19 @@ public class MapGenerator : MonoBehaviour {
 		m.mapa [TAM - 1, TAM - 2] = new newPiezaMap (true, true, true, false);
 		m.mapa [TAM - 2, TAM - 1] = new newPiezaMap (false, true, true, true);
 
+		float tpX = TAM-1, tpY = TAM-1;
+		if (Random.Range(0,2) == 0) {
+			tpX = TAM-1;
+			tpY = Random.Range(0, TAM);
+		}
+		else {
+			tpY = TAM-1;
+			tpX = Random.Range(0, TAM);
+		}
+		Vector3 tpPos = new Vector3(tpX * 20 + 10, 0f, tpY * 20 + 10);
+		m.SetTpPosition(tpPos);
+
+
 		return m;
 	}
 
@@ -114,7 +127,7 @@ public class MapGenerator : MonoBehaviour {
 			terrain.transform.position = new Vector3(Utils.mapOffset, 0, Utils.mapOffset);
 			//newPiezaMap[,] mapa = new newPiezaMap[TAM, TAM];
 			MazmorraCompleta[0] = mapGenerator ();
-			Render (MazmorraCompleta [0].mapa, terrain.transform);
+			Render (MazmorraCompleta [0].mapa, terrain.transform, MazmorraCompleta[0].GetTpPosition());
 
 			// pathfinder
 			pathFinder = terrain.GetComponent<Pathfinder>();
@@ -129,7 +142,7 @@ public class MapGenerator : MonoBehaviour {
 		}
 	}
 
-	public void Render(newPiezaMap[,] mapa, Transform parent) {
+	public void Render(newPiezaMap[,] mapa, Transform parent, Vector3 positionTP) {
 		int i, j;
 		Debug.Log ("RENDER");
 		GameObject auxObject = null;
@@ -161,17 +174,8 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 		}
-		float tpX = TAM-1, tpY = TAM-1;
-		if (Random.Range(0,2) == 0) {
-			tpX = TAM-1;
-			tpY = Random.Range(0, TAM);
-		}
-		else {
-			tpY = TAM-1;
-			tpX = Random.Range(0, TAM);
-		}
-		Vector3 tpPos = new Vector3(tpX * 20 + 10, 0f, tpY * 20 + 10);
-		GameObject tp = Instantiate(mazDown, tpPos, mazDown.transform.rotation) as GameObject;
+
+		GameObject tp = Instantiate(mazDown, positionTP, mazDown.transform.rotation) as GameObject;
 		tp.transform.SetParent(parent, false);
 	}
 

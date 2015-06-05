@@ -9,6 +9,10 @@ public class Map {
 	public newPiezaMap[,] mapa;
 	public ChestDatabase chestDatabase;
 	public EnemyDatabase enemyDatabase;
+	public float tpX;
+	public float tpY;
+	public float tpZ;
+
 	[NonSerialized]
 	public GameObject terrainParent;
 	
@@ -16,4 +20,17 @@ public class Map {
 	public Map () {
 		mapa = new newPiezaMap[TAM, TAM];
 	}
+
+	public Vector3 GetTpPosition()
+	{
+		return new Vector3(this.tpX, this.tpY, this.tpZ);
+	}
+
+	public void SetTpPosition(Vector3 position)
+	{
+		this.tpX = position.x;
+		this.tpY = position.y;
+		this.tpY = position.z;
+	}
+
 }

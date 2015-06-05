@@ -527,7 +527,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 				pEnemies.Place(instantiantedDungeon.transform, mapGenerator.MazmorraCompleta[actualLevel]);
 				mapGenerator.GenerateChests(actualLevel, instantiantedDungeon);
 				mapGenerator.MazmorraCompleta[actualLevel].terrainParent = instantiantedDungeon;
-				mapGenerator.Render(mapGenerator.MazmorraCompleta[actualLevel].mapa, instantiantedDungeon.transform);
+				mapGenerator.Render(mapGenerator.MazmorraCompleta[actualLevel].mapa, instantiantedDungeon.transform, mapGenerator.MazmorraCompleta[actualLevel].GetTpPosition());
 
                 pathFinder = instantiantedDungeon.GetComponent<Pathfinder>();
                 pathFinder.CrearMapa(new Vector2(instantiantedDungeon.transform.position.x,
@@ -631,7 +631,7 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			}
 			instantiantedDungeon.transform.SetParent(mapObject.transform, false);
 			mapGenerator.MazmorraCompleta[actual].terrainParent = instantiantedDungeon;
-			mapGenerator.Render(mapGenerator.MazmorraCompleta[actual].mapa, instantiantedDungeon.transform);
+			mapGenerator.Render(mapGenerator.MazmorraCompleta[actual].mapa, instantiantedDungeon.transform, mapGenerator.MazmorraCompleta[actual].GetTpPosition());
 			//		mapGenerator.Render(mapGenerator.MazmorraCompleta[actual].mapa);
 			mapGenerator.SpawnChest(actual, instantiantedDungeon.transform);
 
