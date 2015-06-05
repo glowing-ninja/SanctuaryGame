@@ -23,7 +23,7 @@ public class Map {
 
 	public Vector3 GetTpPosition()
 	{
-		return new Vector3(this.tpX, this.tpY, this.tpZ);
+		return new Vector3(this.tpX, this.tpZ, this.tpY);
 	}
 
 	public void SetTpPosition(Vector3 position)
