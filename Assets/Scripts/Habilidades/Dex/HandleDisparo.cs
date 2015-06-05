@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HandleDisparo : SkillHandler {
 
-	public float speed = 8.0f;
+	public float speed = 11.0f;
 	public Vector3 lookAt = new Vector3(0,0,0);
 
 	override protected void Update () {
@@ -27,8 +27,8 @@ public class HandleDisparo : SkillHandler {
 	
 	override public void Init(GameObject newPlayer, int skillID)
 	{
-		_strCoef = 0.3f;
-		_dmgCoef = 0.2f;
+		_strCoef = 0.2f;
+		_dmgCoef = 0.1f;
 		jugador = newPlayer;
 		float str = newPlayer.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.FUERZA);
 		float dmg = newPlayer.GetComponent<Attributtes> ().getTotalDamage ();
@@ -36,6 +36,6 @@ public class HandleDisparo : SkillHandler {
 		damage = (int)(str * _strCoef + dmg * _dmgCoef);
 		this.skillID = skillID;
 
-		Destroy (gameObject, 10f);
+		Destroy (gameObject, 2f);
 	}
 }

@@ -9,14 +9,14 @@ public class FBMachaque : TargetSkill {
 		//this.resource = "Habilidad/Heal/Castigo";
 		this.name = "Machaque";
 		this.skillType = "Uso: Sobre un jugador o un enemigo";
-		this.cooldownTime = 2f;
+		this.cooldownTime = 1.5f;
 	}
 	
 	override public bool UseOnEnemy (GameObject target) {
 		stopAnimation();
 		int fuerzaSt = owner.GetComponent<Attributtes>().getTotalStat(Utils.Stat.FUERZA);
 		int dmg = owner.GetComponent<Attributtes>().getTotalDamage();
-		damage = (int)(0.3f * fuerzaSt + 0.2f * dmg);
+		damage = (int)(0.6f * fuerzaSt + 0.4f * dmg);
 		if (Network.isServer) {
 			target.AddComponent<BuffDamageRetardado>();
 			target.GetComponent<BuffDamageRetardado>().Init(this.damage, damageRetardadoTime, skillID, owner);
@@ -41,7 +41,7 @@ public class FBMachaque : TargetSkill {
 
 	override public void Init(GameObject newPlayer, SkillThrower newSkillThrower)
 	{
-		this.cooldownTime = 2f;
+		this.cooldownTime = 1.5f;
 		this.skillID = Random.Range (0, 10000);
 		this.icon = Resources.Load<Sprite> ("Sprites/SKILL_ICON/STR_ICON_MACHAQUE");
 		base.Init(newPlayer, newSkillThrower);
