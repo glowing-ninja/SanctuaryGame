@@ -241,10 +241,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Entereza: 10
-  Fuerza: 40
-  Destreza: 0
+  Fuerza: 10
+  Destreza: 40
   DHechizos: 40
-  Sanacion: 40
+  Sanacion: 10
   Armadura: 5
   "Da\xF1oBase": 0
   Experiencia: 0

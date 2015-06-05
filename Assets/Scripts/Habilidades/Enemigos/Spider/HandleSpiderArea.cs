@@ -50,8 +50,8 @@ public class HandleSpiderArea : SkillHandler
 
     override public void Init(GameObject newPlayer, int skillID)
     {
-        _strCoef = 1f;
-        _dmgCoef = 2f;
+        _strCoef = 2f;
+        _dmgCoef = 1f;
         float str = newPlayer.GetComponent<ENEstadisticas>().Fuerza;
         float dmg = newPlayer.GetComponent<ENEstadisticas>().DañoBase;
 

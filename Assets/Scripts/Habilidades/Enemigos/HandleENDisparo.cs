@@ -43,7 +43,7 @@ public class HandleENDisparo : SkillHandler {
 	{
 		_strCoef = 1f;
 		_dmgCoef = 1f;
-		float str = newPlayer.GetComponent<ENEstadisticas> ().Fuerza;
+		float str = newPlayer.GetComponent<ENEstadisticas> ().Destreza;
 		float dmg = newPlayer.GetComponent<ENEstadisticas> ().DañoBase;
 		
 		damage = (int)(str * _strCoef + dmg * _dmgCoef);
