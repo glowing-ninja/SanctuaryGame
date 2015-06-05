@@ -154,7 +154,8 @@ public class LevelManager : MonoSingleton<LevelManager> {
 			else if (!nextLevel && actual > 0) 
 			{
 				actual--;
-				Vector3 newPos = new Vector3(87f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
+				Transform tp = GameObject.Find("Level_" + actual).transform.FindChild("teleport(Clone)");
+				Vector3 newPos = tp.TransformPoint(2, 0, 0) - new Vector3(2, 0, 0);//mg.MazmorraCompleta[actual].GetTpPosition();//new Vector3(87f + 250 * (actual + 1), 1f, 10f + 250 * (actual + 1));
 				GameObject.FindGameObjectWithTag ("Player").transform.position = newPos;
 				mg.actual = actual;
 				
