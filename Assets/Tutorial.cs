@@ -48,8 +48,8 @@ public class Tutorial : MonoBehaviour {
 		player.GetComponent<followMouse>().enabled = false;
 		player.GetComponent<Teclado>().enabled = false;
 		barraHabilidades.SetActive(false);
-		bt1.SetActive (false);
-		bt2.SetActive (false);
+		//bt1.SetActive (false);
+		//bt2.SetActive (false);
 		wait = true;
 		while (wait) {
 			yield return new WaitForSeconds(0.5f);
@@ -186,9 +186,9 @@ public class Tutorial : MonoBehaviour {
 			
 			ShowError.Show ("En el boton escape tienes el menu de jugador. Cuando salgas del juego (con el boton salir) se guardara automaticamente, pero nunca esta de mas guardar cuando consigas un objeto importante");
 			wait = true;
-			flecha6.SetActive (true);
-			bt1.SetActive(true);
-			bt2.SetActive (true);
+			//flecha6.SetActive (true);
+			//bt1.SetActive(true);
+			//bt2.SetActive (true);
 			while (wait) {
 				yield return new WaitForSeconds(3f);
 			}
@@ -224,8 +224,8 @@ public class Tutorial : MonoBehaviour {
 			player.GetComponent<followMouse>().enabled = true;
 			player.GetComponent<Teclado>().enabled = true;
 			barraHabilidades.SetActive(true);
-			bt1.SetActive (true);
-			bt2.SetActive (true);
+			//bt1.SetActive (true);
+			//bt2.SetActive (true);
 			Destroy(gameObject);
 		}
 	}
