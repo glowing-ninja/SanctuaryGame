@@ -10,6 +10,7 @@ public class H1Castigo : TargetSkill {
 		this.name = "Castigo";
 		this.skillType = "Uso: Sobre un jugador o un enemigo";
 		this.cooldownTime = 2f;
+		this.description = "Un haz de luz inflinge daño al enemigo seleccionado";
 	}
 
 	override public bool UseOnEnemy (GameObject target) {

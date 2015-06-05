@@ -1533,7 +1533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469002, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11469002, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
       propertyPath: reset
@@ -6349,7 +6349,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439586, guid: b461e8fe79cd23743bdb3d8deab7baf3, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 14828702, guid: b461e8fe79cd23743bdb3d8deab7baf3, type: 2}
       propertyPath: m_ViewID.m_ID
@@ -6362,7 +6362,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b461e8fe79cd23743bdb3d8deab7baf3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1752625478
+--- !u!114 &1752625478 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11421330, guid: b461e8fe79cd23743bdb3d8deab7baf3,
     type: 2}
@@ -7028,7 +7028,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 435120, guid: e6e01d2daf21644fd9053b764cb832a6, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 135120, guid: e6e01d2daf21644fd9053b764cb832a6, type: 2}
       propertyPath: m_IsActive

@@ -7,6 +7,7 @@ public class HODivinidad : CAoESkill {
 		this.name = "Divinidad";
 		this.skillType = "Uso: Sobre el puntero del ratón";
 		this.cooldownTime = 20f;
+		this.description = "Inflinge daño a los enemigos y sana a los aliados en un area durante 3 segundos";
 	}
 	public override bool Usar()
 	{
