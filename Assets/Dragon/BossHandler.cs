@@ -137,7 +137,7 @@ public class BossHandler : ENComportamiento {
 			if (target != null && TargetMuerto())
 				EliminaTarget();
 			ActualizarTarget ();
-			DistanciaMaxima ();
+			DistanciaMaximaBoss ();
 		}
 
 		if (stats.PuntosSalud <= maxPV * 0.1f && !enrage) {
@@ -278,4 +278,15 @@ public class BossHandler : ENComportamiento {
 			puente.transform.position = new Vector3 (puente.transform.position.x, -2.6f, puente.transform.position.z);
 		}
 	}
+
+    void DistanciaMaximaBoss()
+    {
+        if ((estadoActual == EstadosEnemigo.ataque || estadoActual == EstadosEnemigo.moverATarget) && target != null)
+        {
+            if (Vector3.Distance(transform.position, target.transform.position) > 100)
+            {
+                EliminaTarget();
+            }
+        }
+    }
 }

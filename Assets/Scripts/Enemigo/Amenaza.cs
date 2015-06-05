@@ -127,6 +127,8 @@ public class Amenaza : MonoBehaviour {
 	}
 
 	public void EliminarJugador(GameObject jug){
+        Objetivo w_obj = objetivos.FirstOrDefault(ob => ob.jugador == jug);
+        int w_indes = objetivos.IndexOf(w_obj);
 		objetivos.RemoveAt (objetivos.IndexOf(objetivos.FirstOrDefault (ob => ob.jugador == jug)));
 	}
 

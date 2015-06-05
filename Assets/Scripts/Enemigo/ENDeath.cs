@@ -22,6 +22,11 @@ public class ENDeath : MonoBehaviour {
 		if(this.transform.parent != null)
 		{
 			string[] values = this.name.Split(separator);
+            if (values[0] == "Boss")
+            {
+                this.level = -1;
+                return;
+            }
 			this.level = int.Parse( values[1]);
 			this.index = int.Parse( values[2]);
 		}
