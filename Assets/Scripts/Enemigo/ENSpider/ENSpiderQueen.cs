@@ -67,14 +67,14 @@ public class ENSpiderQueen : ENComportamiento
         StopAllCoroutines();
         target = null;
 
-        StartCoroutine("Patrulla");
-        estadisticas.ResetVida();
-        estadoActual = EstadosEnemigo.patrulla;
+        //StartCoroutine("Patrulla");
+        //estadisticas.ResetVida();
+        //estadoActual = EstadosEnemigo.patrulla;
     }
 
     public override void Patrullar()
     {
-        if (target != null)
+        /*if (target != null)
         {
             StopCoroutine("Patrulla");
             estadoActual = EstadosEnemigo.ataque;
@@ -82,12 +82,12 @@ public class ENSpiderQueen : ENComportamiento
         else
         {
             moverPatrulla = RotarPatrulla();
-        }
+        }*/
     }
 
     public override void Atacar()
     {
-        if (target == null)
+        /*if (target == null)
         {
             estadoActual = EstadosEnemigo.inicio;
         }
@@ -112,7 +112,7 @@ public class ENSpiderQueen : ENComportamiento
             {
                 EliminaTarget();
             }
-        }
+        }*/
     }
 
     public override void DistanciaMaxima()

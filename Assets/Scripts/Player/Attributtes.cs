@@ -44,7 +44,7 @@ public class Attributtes : MonoBehaviour {
 			//enabled = false;
 		}
 	}
-
+	
 	// Use this for initialization
 	void Start () {
 

@@ -78,7 +78,7 @@ public class HandleDivinidad : SkillHandler {
 		_healCoef = 0.5f;
 		_dmgCoef = 0.2f;
         jugador = newPlayer;
-		float healSt = newPlayer.GetComponent<Attributtes> ().stats [(int)Utils.Stat.CURA];
+		float healSt = newPlayer.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.CURA);
 		float dmg = newPlayer.GetComponent<Attributtes> ().getTotalDamage ();
 
 		this.heal = (int)(healSt * _healCoef + dmg * _dmgCoef);

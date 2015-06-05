@@ -28,6 +28,7 @@ public class HBPotencialDivino : TargetSkill {
 
 	override public bool UseOnAlli (GameObject target) {
 		int healSt = owner.GetComponent<Attributtes>().getTotalStat(Utils.Stat.CURA);
+		this.damage = (int)(1.0f * healSt);
 		target.AddComponent<BuffDamageRetardado>();
 		target.GetComponent<BuffDamageRetardado>().Init (this.damage, damageRetardadoTime, skillID, owner);
 

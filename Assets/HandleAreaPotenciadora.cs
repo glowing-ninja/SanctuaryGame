@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HandleAreaPotenciadora : SkillHandler {
 
-	public float maxTime = 4f;
+	public float maxTime = 8f;
 	private float timeAlive = 0;
 	
 	private float time4Tick = 0.5f;
@@ -54,7 +54,7 @@ public class HandleAreaPotenciadora : SkillHandler {
 		_healCoef = 1f;
 		_dmgCoef = 1f;
         jugador = newPlayer;
-		float healSt = newPlayer.GetComponent<Attributtes> ().stats [(int)Utils.Stat.CURA];
+		float healSt = newPlayer.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.CURA);
 		float dmg = newPlayer.GetComponent<Attributtes> ().getTotalDamage ();
 		
 		damage = (int)(healSt * _healCoef / 2f + dmg * _dmgCoef);

@@ -30,7 +30,7 @@ public class HandleDisparo : SkillHandler {
 		_strCoef = 0.3f;
 		_dmgCoef = 0.2f;
 		jugador = newPlayer;
-		float str = newPlayer.GetComponent<Attributtes> ().stats [(int)Utils.Stat.FUERZA];
+		float str = newPlayer.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.FUERZA);
 		float dmg = newPlayer.GetComponent<Attributtes> ().getTotalDamage ();
 
 		damage = (int)(str * _strCoef + dmg * _dmgCoef);

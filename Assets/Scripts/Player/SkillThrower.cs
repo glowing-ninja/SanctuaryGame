@@ -70,6 +70,6 @@ public class SkillThrower : MonoBehaviour {
 		GameObject instantiatedProjectile =  Instantiate(elemento, target, elemento.transform.rotation) as GameObject;
 
 		GameObject player = GameObject.Find (owner);
-		instantiatedProjectile.GetComponent<SkillHandler> ().Init (player, skillID);
+		instantiatedProjectile.GetComponent<SkillHandler> ().Init (Utils.player, skillID);
 	}
 }

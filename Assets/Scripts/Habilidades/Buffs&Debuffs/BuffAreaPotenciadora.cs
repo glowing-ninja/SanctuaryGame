@@ -25,7 +25,7 @@ public class BuffAreaPotenciadora : Buff {
 		mejoraStats = new int[5];
 		int[] stats = gameObject.GetComponent<Attributtes> ().stats;
 		for (int i = 0; i < 5; i++) {
-			mejoraStats [i] = (int)(stats [i] * amount);
+			mejoraStats [i] = (int)(stats [i] * amount/100);
 			gameObject.GetComponent<Attributtes> ().bonusStats[i] += mejoraStats[i];
 		}
 		potenciador = Resources.Load ("Habilidad/Heal/Potenciador") as GameObject;

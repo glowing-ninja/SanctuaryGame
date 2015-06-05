@@ -30,7 +30,7 @@ public class HandleMagicBall : SkillHandler {
 		_spCoef = 0.2f;
 		_dmgCoef = 0.3f;
         jugador = newPlayer;
-		float sp = newPlayer.GetComponent<Attributtes> ().stats [(int)Utils.Stat.MAGIA];
+		float sp = newPlayer.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.MAGIA);
 		float dmg = newPlayer.GetComponent<Attributtes> ().getTotalDamage ();
 		
 		damage = (int)(sp * _spCoef + dmg * _dmgCoef);

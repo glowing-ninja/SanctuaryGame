@@ -73,7 +73,7 @@ public class HandleTorbellino : SkillHandler {
 		_strCoef = 0.2f;
 		_dmgCoef = 0.3f;
         jugador = newPlayer;
-		float str = newPlayer.GetComponent<Attributtes> ().stats [(int)Utils.Stat.FUERZA];
+		float str = newPlayer.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.FUERZA);
 		float dmg = newPlayer.GetComponent<Attributtes> ().getTotalDamage ();
 		
 		damage = (int)(str * _healCoef + dmg * _dmgCoef);
