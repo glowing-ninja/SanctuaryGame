@@ -595,7 +595,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!114 &32296714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,7 +1481,7 @@ Transform:
   - {fileID: 1460473293}
   - {fileID: 1762160392}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
 --- !u!1001 &95664755
 Prefab:
   m_ObjectHideFlags: 0
@@ -6139,8 +6139,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 15.8000002, y: 52.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -15.8999996, y: 52.5}
+  m_SizeDelta: {x: 96.5, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &429633669
 MonoBehaviour:
