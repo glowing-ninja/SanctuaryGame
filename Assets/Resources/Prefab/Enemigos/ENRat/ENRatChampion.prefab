@@ -149,7 +149,7 @@ MonoBehaviour:
   velocidadMovAtaque: 3
   velocidadMovReset: 10
   rangoAtaque: 2
-  destoryWhenSikill: 0
+  destoryWhenSikill: 1
   posicionInicial: {x: 0, y: 0, z: 0}
   posPatrulla: {x: 0, y: 0, z: 0}
   tarAttri: {fileID: 0}

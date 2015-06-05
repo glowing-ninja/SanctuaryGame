@@ -480,7 +480,7 @@ MonoBehaviour:
   barraVida: {fileID: 0}
   prefabCanvasEnemigo: {fileID: 104284, guid: 8969fbf6b32bcce47a396a3d8067e310, type: 2}
   canvasEnemigo: {fileID: 0}
-  barraVida2D: 1
+  barraVida2D: 0
   nombreEnemigo: Suicida
 --- !u!114 &11494506
 MonoBehaviour:
