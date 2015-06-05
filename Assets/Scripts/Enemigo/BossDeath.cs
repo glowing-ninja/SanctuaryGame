@@ -4,6 +4,8 @@ using System.Collections;
 public class BossDeath : ENDeath {
 
 	public GameObject MobsContainer;
+	public GameObject bossTp;
+	public Transform bossTpAncla;
 
 	// Use this for initialization
 	void Start ()
@@ -30,6 +32,7 @@ public class BossDeath : ENDeath {
 				{
 					GameObject.Destroy(this.MobsContainer.transform.GetChild(i).gameObject);
 				}
+				GameObject.Instantiate(bossTp, bossTpAncla.position, bossTp.transform.rotation);
 
 				Network.RemoveRPCs (GetComponent<NetworkView>().viewID);
 			}
