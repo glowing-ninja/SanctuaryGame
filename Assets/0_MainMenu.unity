@@ -1678,7 +1678,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &260928651
+--- !u!1 &260928651 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 169002, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
   m_PrefabInternal: {fileID: 260928650}
@@ -4277,6 +4277,8 @@ MonoBehaviour:
   isMenu: 1
   bCrearPartida: {fileID: 86649918}
   bUnirsePartida: {fileID: 1509301384}
+  bCrearPJ: {fileID: 1772286968}
+  bUnirsePJ: {fileID: 1189259952}
 --- !u!82 &1094428570
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4358,6 +4360,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToolTip: {fileID: 0}
+  item:
+    name: 
+    rarity: 1
+    probModifier: 0
+    level: 1
+    type: 0
+    subType: 0
+    damage: 0
+    armor: 0
+    stats: 0000000000000000000000000000000000000000
+    isStat1: 0
+    isStat2: 0
+    isAffinity: 5
+    affinity: 0
+    gold: 5
 --- !u!1 &1101541329
 GameObject:
   m_ObjectHideFlags: 0
@@ -6932,7 +6949,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b461e8fe79cd23743bdb3d8deab7baf3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1752625478
+--- !u!114 &1752625478 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11421330, guid: b461e8fe79cd23743bdb3d8deab7baf3,
     type: 2}
