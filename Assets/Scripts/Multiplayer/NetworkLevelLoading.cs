@@ -36,15 +36,15 @@ public class NetworkLevelLoading : MonoSingleton<NetworkLevelLoading>
 
 				GetComponent<NetworkView>().RPC ("LoadLevelAdditive", RPCMode.AllBuffered, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
 			}
-			/*else 
-			if(nPlayer != Network.player)
-			{
-				GetComponent<NetworkView>().RPC ("LoadLevelAdditive", nPlayer, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
-			}
-			else
-			{
-				StartCoroutine( this.LoadLevelAdditive(level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom));
-			}*/
+			else 
+				if(nPlayer != Network.player)
+				{
+					GetComponent<NetworkView>().RPC ("LoadLevelAdditive", nPlayer, level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom);
+				}
+				else
+				{
+					StartCoroutine( this.LoadLevelAdditive(level, this.lastLevelPrefix, nPlayer, nextDungeon, bossRoom));
+				}
 		}
 	}
 
