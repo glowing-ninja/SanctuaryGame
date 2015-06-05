@@ -155,7 +155,7 @@ public class NetworkLevelLoading : MonoSingleton<NetworkLevelLoading>
 		MapGenerator mapGenerator = GameObject.Find("Dungeon").GetComponent<MapGenerator>();
 		int depth = mapGenerator.depth + 1;
 		mapGenerator.actual = depth;
-		Utils.player.transform.position = new Vector3(250f * (depth), 1, 250f * depth - 60f);
+		Utils.player.transform.position = new Vector3(250f * (depth), 5, 250f * depth - 60f);
 	}
 
 	void OnDisconnectedFromServer ()
