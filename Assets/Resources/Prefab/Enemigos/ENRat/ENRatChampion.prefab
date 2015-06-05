@@ -149,10 +149,10 @@ MonoBehaviour:
   velocidadMovAtaque: 3
   velocidadMovReset: 10
   rangoAtaque: 2
+  destoryWhenSikill: 0
   posicionInicial: {x: 0, y: 0, z: 0}
   posPatrulla: {x: 0, y: 0, z: 0}
   tarAttri: {fileID: 0}
-  destoryWhenSikill: 0
 --- !u!114 &11463076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,7 +222,7 @@ NetworkView:
   m_GameObject: {fileID: 110662}
   m_Enabled: 1
   m_StateSynchronization: 1
-  m_Observed: {fileID: 499586}
+  m_Observed: {fileID: 11400866}
   m_ViewID:
     m_ID: 0
     m_Type: 0
