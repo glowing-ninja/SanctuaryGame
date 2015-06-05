@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ENSpiderQueen : ENComportamiento
+public class ENDummy : ENComportamiento
 {
-    #region Declaracion variables
+
+	#region Declaracion variables
     //Habilidades
     private const int skillNumber = 2;
     public GameObject[] habilidades;
@@ -67,14 +68,14 @@ public class ENSpiderQueen : ENComportamiento
         StopAllCoroutines();
         target = null;
 
-        StartCoroutine("Patrulla");
-        estadisticas.ResetVida();
-        estadoActual = EstadosEnemigo.patrulla;
+        //StartCoroutine("Patrulla");
+        //estadisticas.ResetVida();
+        //estadoActual = EstadosEnemigo.patrulla;
     }
 
     public override void Patrullar()
     {
-        if (target != null)
+        /*if (target != null)
         {
             StopCoroutine("Patrulla");
             estadoActual = EstadosEnemigo.ataque;
@@ -82,12 +83,12 @@ public class ENSpiderQueen : ENComportamiento
         else
         {
             moverPatrulla = RotarPatrulla();
-        }
+        }*/
     }
 
     public override void Atacar()
     {
-        if (target == null)
+        /*if (target == null)
         {
             estadoActual = EstadosEnemigo.inicio;
         }
@@ -112,7 +113,7 @@ public class ENSpiderQueen : ENComportamiento
             {
                 EliminaTarget();
             }
-        }
+        }*/
     }
 
     public override void DistanciaMaxima()
