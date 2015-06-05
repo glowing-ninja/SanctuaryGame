@@ -27,7 +27,7 @@ public class CommunicationWindow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.T))
+		if(Input.GetKeyDown(KeyCode.Return) && !this.writingMessage)
 		{
 			this.chatInput.gameObject.SetActive(true);
 			this.chatInput.Select();
@@ -35,7 +35,7 @@ public class CommunicationWindow : MonoBehaviour {
 			this.writingMessage = true;
 			this.DisableInputs();
 		}
-
+		else
 		if(Input.GetKeyDown(KeyCode.Return) && this.writingMessage)
 		{
 			this.writingMessage = false;

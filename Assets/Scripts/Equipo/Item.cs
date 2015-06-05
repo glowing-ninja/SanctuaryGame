@@ -55,7 +55,7 @@ public class Item {
 
 		isAffinity = Utils.Element.NONE;
 		affinity = 0;
-		icon = Resources.Load<Sprite>("Sprites/sword-icon");
+		//icon = Resources.Load<Sprite>("Sprites/sword-icon");
 		gold = 5;
 	}
 
