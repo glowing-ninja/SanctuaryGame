@@ -136,7 +136,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 4b000ac72ff6347349af9ce39b7dd13f, type: 2}
     - target: {fileID: 11419880, guid: 28d609175a12cc4468fc52e3baa0fef9, type: 2}
       propertyPath: mazDown
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28d609175a12cc4468fc52e3baa0fef9, type: 2}
