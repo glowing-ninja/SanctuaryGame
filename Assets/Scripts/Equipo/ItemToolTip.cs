@@ -71,12 +71,12 @@ public class ItemToolTip : MonoBehaviour {
 			transform.Find("img_stat2").transform.Find("lb_stat2").GetComponent<Text>().text = i.stats[i.isStat2].ToString();
 		}
 
-		if (i.isAffinity != Utils.Element.NONE) {
+		/*if (i.isAffinity != Utils.Element.NONE) {
 			transform.Find("img_affinity").GetComponent<Image>().enabled = true;
 			transform.Find("img_affinity").GetComponent<Image>().sprite = affinitys[(int)i.isAffinity];
 			transform.Find("img_affinity").transform.Find("lb_affinity").GetComponent<Text>().enabled = true;
 			transform.Find("img_affinity").transform.Find("lb_affinity").GetComponent<Text>().text = i.affinity + "%";
-		}
+		}*/
 
 
 	}
