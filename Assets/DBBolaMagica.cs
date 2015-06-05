@@ -30,7 +30,7 @@ public class DBBolaMagica : DirectionalSkill {
 	
 	override public void Init(GameObject newPlayer, SkillThrower newSkillThrower)
 	{
-		this.cooldownTime = 3f;
+		this.cooldownTime = 1.5f;
 		this.icon = Resources.Load<Sprite> ("Sprites/SKILL_ICON/SP_ICON_BOLAMAGICA");
 		base.Init(newPlayer, newSkillThrower);
 	}

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HandleMagicBall : SkillHandler {
 	
-	public float speed = 4.0f;
+	public float speed = 6.0f;
 	public Vector3 lookAt = new Vector3(0,0,0);
 	
 	override protected void Update () {
@@ -28,7 +28,7 @@ public class HandleMagicBall : SkillHandler {
 	override public void Init(GameObject newPlayer, int skillID)
 	{
 		_spCoef = 0.2f;
-		_dmgCoef = 0.3f;
+		_dmgCoef = 0.2f;
         jugador = newPlayer;
 		float sp = newPlayer.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.MAGIA);
 		float dmg = newPlayer.GetComponent<Attributtes> ().getTotalDamage ();
@@ -36,6 +36,6 @@ public class HandleMagicBall : SkillHandler {
 		damage = (int)(sp * _spCoef + dmg * _dmgCoef);
 		this.skillID = skillID;
 		
-		Destroy (gameObject, 10f);
+		Destroy (gameObject, 2f);
 	}
 }

@@ -38,7 +38,7 @@ public class DBDisparo : DirectionalSkill {
 
 	override public void Init(GameObject newPlayer, SkillThrower newSkillThrower)
 	{
-		this.cooldownTime = 3f;
+		this.cooldownTime = 1.5f;
 		this.icon = Resources.Load<Sprite> ("Sprites/SKILL_ICON/DEX_ICON_DISPARO");
 		base.Init(newPlayer, newSkillThrower);
 	}
