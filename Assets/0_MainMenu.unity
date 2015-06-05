@@ -1678,7 +1678,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &260928651 stripped
+--- !u!1 &260928651
 GameObject:
   m_PrefabParentObject: {fileID: 169002, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
   m_PrefabInternal: {fileID: 260928650}
@@ -4981,19 +4981,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067842031}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1752625478}
-        m_MethodName: unirseServidorCrearNuevo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1189259953
@@ -6949,12 +6937,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b461e8fe79cd23743bdb3d8deab7baf3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1752625478 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11421330, guid: b461e8fe79cd23743bdb3d8deab7baf3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1752625477}
-  m_Script: {fileID: 11500000, guid: 1425ccd618f777a49961fbc3ad1ba541, type: 3}
 --- !u!1 &1772286966
 GameObject:
   m_ObjectHideFlags: 0
@@ -7031,19 +7013,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1230016744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1752625478}
-        m_MethodName: crearPartidaOffline
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1772286969
