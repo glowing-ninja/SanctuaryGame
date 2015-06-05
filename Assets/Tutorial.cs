@@ -57,7 +57,7 @@ public class Tutorial : MonoBehaviour {
 
 		if (doTutorial) {
 			transform.position = new Vector3(-1000f, -1000f);
-			ShowError.Show ("! Bienvenidos al tutorial de este prototipo !");
+			ShowError.Show ("! Bienvenidos al tutorial de este fantastico juego !");
 			wait = true;
 			while (wait) {
 				yield return new WaitForSeconds(0.5f);
@@ -95,8 +95,19 @@ public class Tutorial : MonoBehaviour {
 				yield return new WaitForSeconds(0.5f);
 			}
 			flecha1.SetActive (false);
+
+			ShowError.Show ("En la parte de abajo de las estadisticas veras las maestrias con arma. Cada habilidad esta asociada a un tipo de arma. Cuantas mas habilidades uses mejores estadisticas obtendras");
 			
-			ShowError.Show ("Actualmente no es recomendable abrir más de un menú. Cierra las estadísticas haciendo click de nuevo sobre el icono y pasa a la segunda opción.");
+			//wait = true;
+			//while (wait) {
+			//}
+			wait = true;
+			while (wait) {
+				yield return new WaitForSeconds(0.5f);
+			}
+			yield return new WaitForSeconds(5f);
+
+			ShowError.Show ("Cierra las estadísticas haciendo click de nuevo sobre el icono y pasa a la segunda opción. Ahora es el turno del equipamiento");
 			flecha2.SetActive (true);
 			wait = true;
 			while (wait) {
@@ -145,32 +156,63 @@ public class Tutorial : MonoBehaviour {
 			flecha5.SetActive (true);
 			wait = true;
 			while (wait) {
-				yield return new WaitForSeconds(0.5f);
+				yield return new WaitForSeconds(2f);
 			}
 			
 			ShowError.Show ("Si ya has hecho click, el círculo estará de color verde, eso significa que está listo para que elijas habilidad. Elije Divinidad o Torbellino. Si pasas el ratón por encima de la habilidad verás una descripción.");
+			//wait = true;
+			//while (wait) {
+			//}
 			wait = true;
 			while (wait) {
 				yield return new WaitForSeconds(0.5f);
 			}
+			yield return new WaitForSeconds(4f);
 			flecha5.SetActive (false);
 			
-			ShowError.Show ("Es hora de usar tu nueva habilidad. Encima del icono de tu habilidad podrás ver con que tecla usarla. Hay varios tipos de habilidades: sobre un objetivo, automáticas sobre el mapa. No te asustes si una habilidad no funciona a la primera.");
+			ShowError.Show ("Es hora de usar tu nueva habilidad. Encima del icono de tu habilidad podrás ver con que tecla usarla. Hay varios tipos de habilidades: sobre un objetivo, automáticas sobre el mapa.");
+			wait = true;
+			player.GetComponent<Teclado>().enabled = true;
+			while (wait) {
+				yield return new WaitForSeconds(0.5f);
+			}
+
+			ShowError.Show ("Puedes probar las habilidades con el bloque de hielo de aqui arriba.");
 			wait = true;
 			player.GetComponent<Teclado>().enabled = true;
 			while (wait) {
 				yield return new WaitForSeconds(0.5f);
 			}
 			
-			ShowError.Show ("Para finalizar te enseñaré como vender objetos y guardar tu partida durante este prototipo. En la parte inferior derecha de la pantalla te voy a dar un par de opciones provisionales. El guardado no es automático, así que no te olvides de guardar antes de salir.");
+			ShowError.Show ("En el boton escape tienes el menu de jugador. Cuando salgas del juego (con el boton salir) se guardara automaticamente, pero nunca esta de mas guardar cuando consigas un objeto importante");
 			wait = true;
 			flecha6.SetActive (true);
 			bt1.SetActive(true);
 			bt2.SetActive (true);
 			while (wait) {
+				yield return new WaitForSeconds(3f);
+			}
+
+			ShowError.Show ("Esta zona ya esta dominada por tus demonios. Alguno de ellos puede venderte objetos utiles.");
+			wait = true;
+			flecha6.SetActive (false);
+			while (wait) {
 				yield return new WaitForSeconds(0.5f);
 			}
-			ShowError.Show ("Es hora de que empieces a pelear. Busca la estructura naranja y atraviesala, eso debería bastar para bajar a la mazmorra. ¡ Suerte !");
+
+			ShowError.Show ("En el menu de compra deberas hacer click sobre el objeto que te interese para aumenta el nivel de rareza. ¡ Cuanto mas raro lo quieras, mas tendras que pagar !.");
+			wait = true;
+			while (wait) {
+				yield return new WaitForSeconds(0.5f);
+			}
+
+			ShowError.Show ("Por ultimo, si te sobra dinero puedes gastarlo en nuestras tragaperras del infierno. Los premios son realmente impresionantes.");
+			wait = true;
+			while (wait) {
+				yield return new WaitForSeconds(0.5f);
+			}
+
+			ShowError.Show ("Es hora de que empieces a pelear. Busca el portal de fuego al noroeste, eso debería bastar para bajar a la mazmorra. ¡ Suerte !");
 			wait = true;
 			flecha6.SetActive (false);
 			while (wait) {

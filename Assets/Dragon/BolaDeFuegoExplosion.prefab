@@ -14,6 +14,7 @@ GameObject:
   - 108: {fileID: 10844854}
   - 135: {fileID: 13563976}
   - 114: {fileID: 11426954}
+  - 148: {fileID: 14873954}
   m_Layer: 0
   m_Name: BolaDeFuegoExplosion
   m_TagString: Untagged
@@ -160,6 +161,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.36999989
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!148 &14873954
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114534}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!198 &19814534
 ParticleSystem:
   m_ObjectHideFlags: 1

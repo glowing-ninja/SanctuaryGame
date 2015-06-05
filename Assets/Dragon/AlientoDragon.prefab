@@ -13,6 +13,7 @@ GameObject:
   - 108: {fileID: 10807740}
   - 114: {fileID: 11414422}
   - 136: {fileID: 13614422}
+  - 148: {fileID: 14826196}
   m_Layer: 0
   m_Name: AlientoDragon
   m_TagString: Untagged
@@ -118,6 +119,18 @@ CapsuleCollider:
   m_Height: 5.55999994
   m_Direction: 2
   m_Center: {x: -.0011973381, y: .00217747688, z: 3.36054707}
+--- !u!148 &14826196
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106324}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 0}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!198 &19806324
 ParticleSystem:
   m_ObjectHideFlags: 1
