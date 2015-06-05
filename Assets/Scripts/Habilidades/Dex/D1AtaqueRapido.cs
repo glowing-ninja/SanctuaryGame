@@ -15,7 +15,7 @@ public class D1AtaqueRapido : SelfSkill {
 	public override bool Usar()
 	{
 		int dex = owner.GetComponent<Attributtes> ().getTotalStat (Utils.Stat.DESTREZA);
-		damage = (int)(5.0f * dex);
+		damage = (int)(dex);
 		IncreaseDexterity iDex = owner.AddComponent<IncreaseDexterity>();
 		iDex.Init(this.damage, this.duration, skillID, owner); 
 
