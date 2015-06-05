@@ -434,11 +434,10 @@ MonoBehaviour:
   velocidadMovAtaque: 3
   velocidadMovReset: 10
   rangoAtaque: 2.5
+  destoryWhenSikill: 1
   posicionInicial: {x: 0, y: 0, z: 0}
   posPatrulla: {x: 0, y: 0, z: 0}
   tarAttri: {fileID: 0}
-  pruebas: 0
-  destoryWhenSikill: 1
 --- !u!114 &11443914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -463,9 +462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Entereza: 10
   Fuerza: 40
-  Destreza: 40
-  DHechizos: 40
-  Sanacion: 40
+  Destreza: 10
+  DHechizos: 5
+  Sanacion: 5
   Armadura: 5
   "Da\xF1oBase": 0
   Experiencia: 0
