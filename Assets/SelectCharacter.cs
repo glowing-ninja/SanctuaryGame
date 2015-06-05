@@ -18,6 +18,10 @@ public class SelectCharacter : MonoBehaviour, IPointerDownHandler {
 	public GameObject nuevoPJ;
 	public GameObject crearServidor;
 
+	public GameObject btUnirse;
+	public bool isIp;
+	public GameObject btIp;
+
 	void Start () {
 		if (transform.GetChild (0).GetComponent<Text> ().text != "Nuevo") {
 			GetComponent<Image> ().color = normalColor;
@@ -45,6 +49,11 @@ public class SelectCharacter : MonoBehaviour, IPointerDownHandler {
 			if (nuevoPJ != null && crearServidor != null) {
 				nuevoPJ.SetActive(true);
 				crearServidor.SetActive(false);
+				btUnirse.SetActive(true);
+				if (isIp)
+					btIp.SetActive(true);
+				else
+					btIp.SetActive(false);
 			}
 		}
 	}

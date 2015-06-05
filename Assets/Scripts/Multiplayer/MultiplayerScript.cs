@@ -140,6 +140,28 @@ public class MultiplayerScript : MonoSingleton<MultiplayerScript> {
 
 	}
 
+	public void unirseServidorCrearNuevo () {
+		Color32 c = GameObject.Find("Colors").GetComponent<selectColor>().color;
+		string name = GameObject.Find ("NuevoPJ").transform.Find ("if_Nombre").transform.Find ("Text").GetComponent<Text>().text;
+		if (name.Equals("")) {
+			playerName = "Player";
+		} else
+			playerName = name;
+		
+		PlayerPrefs.SetString("playerName", this.playerName);
+		Utils.playerName = this.playerName;
+		
+		crearPersonaje(playerName, c.r, c.g, c.b);
+		
+		string port = GameObject.Find ("NuevoPJ").transform.Find ("if_Puerto").transform.Find ("Text").GetComponent<Text>().text;
+		this.port = int.Parse(port);
+		string ip = GameObject.Find ("NuevoPJ").transform.Find ("if_Ip").transform.Find ("Text").GetComponent<Text>().text;
+		this.ipAddress = ip;
+		
+		Network.Connect (this.ipAddress, this.port);
+		
+	}
+
 	void OnDisconnectedFromServer()
 	{
 		//If a player loses the connection or leaves the scen then level is restarted on their computer
