@@ -28,10 +28,12 @@ public class BossDeath : ENDeath {
 
 				int childNum = this.MobsContainer.transform.childCount;
 
-				for(int i = childNum - 1; i >= 0; i++)
-				{
-					GameObject.Destroy(this.MobsContainer.transform.GetChild(i).gameObject);
-				}
+				//for(int i = childNum - 1; i >= 0; i++)
+                for (int i = 0; i < childNum; i++)
+                {
+                    this.MobsContainer.transform.GetChild(i).gameObject.GetComponent<AddsDeath>().DeadthDragon();
+                    //GameObject.Destroy(this.MobsContainer.transform.GetChild(i).gameObject);
+                }
 				GameObject.Instantiate(bossTp, bossTpAncla.position, bossTp.transform.rotation);
 
 				Network.RemoveRPCs (GetComponent<NetworkView>().viewID);

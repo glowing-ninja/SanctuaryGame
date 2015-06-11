@@ -1678,7 +1678,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &260928651
+--- !u!1 &260928651 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 169002, guid: dbd55e2fa75a74bdeb936fced1bb5029, type: 2}
   m_PrefabInternal: {fileID: 260928650}

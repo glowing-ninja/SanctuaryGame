@@ -25,4 +25,8 @@ public class AddsDeath : ENDeath {
 			}
 		}
 	}
+    public void DeadthDragon()
+    {
+        stats.PuntosSalud = -10;
+    }
 }
