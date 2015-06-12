@@ -454,6 +454,10 @@ Prefab:
       propertyPath: chestLevel
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11401650, guid: 661983c49b9c4824e99b1676d6ad30df, type: 2}
+      propertyPath: Entereza
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 661983c49b9c4824e99b1676d6ad30df, type: 2}
   m_IsPrefabParent: 0

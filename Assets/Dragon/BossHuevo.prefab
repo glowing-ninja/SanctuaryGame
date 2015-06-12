@@ -238,6 +238,7 @@ MonoBehaviour:
   muerte: {fileID: 0}
   level: 0
   index: 0
+  chestLevel: 1
   MobsContainer: {fileID: 0}
 --- !u!114 &11470680
 MonoBehaviour:
@@ -250,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df19920f71dd7bc4d84a5d5f43c26873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Entereza: 10
+  Entereza: 3
   Fuerza: 40
   Destreza: 40
   DHechizos: 40
