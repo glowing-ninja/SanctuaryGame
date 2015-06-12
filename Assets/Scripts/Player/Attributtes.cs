@@ -272,8 +272,8 @@ public class Attributtes : MonoBehaviour {
 			instantiatedOff.transform.SetParent(offHand, false);
 			break;
 		}
-
-		gameObject.GetComponent<NetworkView>().RPC("InstantiateWeaponOnOthers", RPCMode.Others, st);
+		if(gameObject.GetComponent<NetworkView>().isMine)
+			gameObject.GetComponent<NetworkView>().RPC("InstantiateWeaponOnOthers", RPCMode.Others, st);
 	}
 
 	[RPC]

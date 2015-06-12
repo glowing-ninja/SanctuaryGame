@@ -118,8 +118,8 @@ public class MapGenerator : MonoBehaviour {
 			//int lv = GameObject.FindGameObjectWithTag ("Player").GetComponent<Attributtes> ().level;
 			int lv = 1;
 			
-			depth = Mathf.Max (2, 1 + lv / 3 );
-			//depth = 1	;
+			//depth = Mathf.Max (2, 1 + lv / 3 );
+			depth = 1	;
 
 			MazmorraCompleta = new Map[depth];
 			GameObject terrain = GameObject.Find("Level_0") as GameObject;
