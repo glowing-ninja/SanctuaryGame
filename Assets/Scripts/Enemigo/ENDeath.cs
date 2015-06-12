@@ -10,7 +10,7 @@ public class ENDeath : MonoBehaviour {
 	public int level;
 	public int index;
     private bool deadthInExplosion = false;
-    
+	public int chestLevel = 1;
 	
 	void Start() {
 		stats = gameObject.GetComponent<ENEstadisticas> ();
@@ -153,7 +153,7 @@ public class ENDeath : MonoBehaviour {
 		if(obj != null)
 			parentTransform = obj.transform;
 		
-		ChestSpawn.Spawn(1, gameObject.transform.position, parentTransform);
+		ChestSpawn.Spawn(chestLevel, gameObject.transform.position, parentTransform);
 	}
 	
 	[RPC]

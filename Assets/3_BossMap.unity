@@ -87,7 +87,7 @@ NavMeshSettings:
     cellSize: .166666657
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &194991448 stripped
+--- !u!4 &194991448
 Transform:
   m_PrefabParentObject: {fileID: 402606, guid: ccae797feecbe43f6a0a193c17c370a4, type: 2}
   m_PrefabInternal: {fileID: 1397702953}
@@ -450,10 +450,14 @@ Prefab:
       propertyPath: addsParent
       value: 
       objectReference: {fileID: 978872034}
+    - target: {fileID: 11451372, guid: 661983c49b9c4824e99b1676d6ad30df, type: 2}
+      propertyPath: chestLevel
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 661983c49b9c4824e99b1676d6ad30df, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &519058190 stripped
+--- !u!4 &519058190
 Transform:
   m_PrefabParentObject: {fileID: 473082, guid: 661983c49b9c4824e99b1676d6ad30df, type: 2}
   m_PrefabInternal: {fileID: 519058189}
@@ -596,7 +600,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccae797feecbe43f6a0a193c17c370a4, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &609131527 stripped
+--- !u!4 &609131527
 Transform:
   m_PrefabParentObject: {fileID: 402606, guid: ccae797feecbe43f6a0a193c17c370a4, type: 2}
   m_PrefabInternal: {fileID: 1139284475}
@@ -628,19 +632,19 @@ Transform:
   - {fileID: 522130543}
   m_Father: {fileID: 234891248}
   m_RootOrder: 2
---- !u!4 &736535555 stripped
+--- !u!4 &736535555
 Transform:
   m_PrefabParentObject: {fileID: 402606, guid: ccae797feecbe43f6a0a193c17c370a4, type: 2}
   m_PrefabInternal: {fileID: 553865756}
---- !u!4 &763994417 stripped
+--- !u!4 &763994417
 Transform:
   m_PrefabParentObject: {fileID: 402606, guid: ccae797feecbe43f6a0a193c17c370a4, type: 2}
   m_PrefabInternal: {fileID: 362555229}
---- !u!4 &921594326 stripped
+--- !u!4 &921594326
 Transform:
   m_PrefabParentObject: {fileID: 402606, guid: ccae797feecbe43f6a0a193c17c370a4, type: 2}
   m_PrefabInternal: {fileID: 1431380260}
---- !u!4 &945149584 stripped
+--- !u!4 &945149584
 Transform:
   m_PrefabParentObject: {fileID: 402606, guid: ccae797feecbe43f6a0a193c17c370a4, type: 2}
   m_PrefabInternal: {fileID: 581414918}
@@ -803,7 +807,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85f7b3b77ff9c9d43a856e2e841daaff, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &998090544 stripped
+--- !u!4 &998090544
 Transform:
   m_PrefabParentObject: {fileID: 491022, guid: 85f7b3b77ff9c9d43a856e2e841daaff, type: 2}
   m_PrefabInternal: {fileID: 998090543}
@@ -1011,7 +1015,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9df70885d681b4cc49a63ed0dcf39893, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1459033125 stripped
+--- !u!4 &1459033125
 Transform:
   m_PrefabParentObject: {fileID: 433030, guid: 9df70885d681b4cc49a63ed0dcf39893, type: 2}
   m_PrefabInternal: {fileID: 1459033124}
@@ -1154,7 +1158,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .5, y: 2.75999999, z: 4.76000023}
   m_Center: {x: -5.69000006, y: 2.13000011, z: 0}
---- !u!4 &1730920009 stripped
+--- !u!4 &1730920009
 Transform:
   m_PrefabParentObject: {fileID: 456592, guid: bd5911e1d36438340a47e526d540cd3d, type: 2}
   m_PrefabInternal: {fileID: 1930483825}
@@ -1301,7 +1305,7 @@ Prefab:
     - {fileID: 11415370, guid: bd5911e1d36438340a47e526d540cd3d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bd5911e1d36438340a47e526d540cd3d, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1930483826 stripped
+--- !u!1 &1930483826
 GameObject:
   m_PrefabParentObject: {fileID: 160038, guid: bd5911e1d36438340a47e526d540cd3d, type: 2}
   m_PrefabInternal: {fileID: 1930483825}
@@ -1319,6 +1323,7 @@ MonoBehaviour:
   muerte: {fileID: 0}
   level: 0
   index: 0
+  chestLevel: 1
   MobsContainer: {fileID: 978872034}
   bossTp: {fileID: 167194, guid: 8226ca34e28cec74083eb67886656cab, type: 2}
   bossTpAncla: {fileID: 1583729661}
@@ -1368,7 +1373,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9df70885d681b4cc49a63ed0dcf39893, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &2102153586 stripped
+--- !u!4 &2102153586
 Transform:
   m_PrefabParentObject: {fileID: 433030, guid: 9df70885d681b4cc49a63ed0dcf39893, type: 2}
   m_PrefabInternal: {fileID: 2102153585}

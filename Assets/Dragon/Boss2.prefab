@@ -1539,6 +1539,7 @@ MonoBehaviour:
   muerte: {fileID: 0}
   level: 0
   index: 0
+  chestLevel: 3
   MobsContainer: {fileID: 0}
   bossTp: {fileID: 167194, guid: 8226ca34e28cec74083eb67886656cab, type: 2}
   bossTpAncla: {fileID: 0}
