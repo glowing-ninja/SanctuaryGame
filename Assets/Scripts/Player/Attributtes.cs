@@ -48,7 +48,19 @@ public class Attributtes : MonoBehaviour {
 			//enabled = false;
 		}
 	}
-	
+
+	[RPC]
+	void ShareColor(int red, int green, int blue)
+	{
+		Color32 c = new Color32();
+		c.r = (byte)red;
+		c.g = (byte)green;
+		c.b = (byte)blue;
+		
+		piel = c;
+		gameObject.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color = c;
+	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -101,6 +113,10 @@ public class Attributtes : MonoBehaviour {
 
 			piel = c;
 			Utils.player.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().materials[0].color = c;
+
+			if(GetComponent<NetworkView>().isMine)
+				gameObject.GetComponent<NetworkView>().RPC("ShareColor", RPCMode.OthersBuffered, db.QueryInt("redColor", playerName), db.QueryInt("greenColor", playerName),
+			                                           db.QueryInt("blueColor", playerName));
 
 		} else {
 			level = 1;
