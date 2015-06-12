@@ -13,6 +13,8 @@ public class BossDeath : ENDeath {
 		this.stats = gameObject.GetComponent<ENEstadisticas> ();
 		this.enemigo = gameObject.GetComponent<ENComportamiento>();
 		this.playerDB = GameObject.Find("MultiplayerManager").GetComponent<PlayerDataBase>();
+		this.MobsContainer = GameObject.Find("BabyDragonContainer");
+		this.bossTpAncla = GameObject.Find("tpPosition").transform;
 	}
 	
 	// Update is called once per frame

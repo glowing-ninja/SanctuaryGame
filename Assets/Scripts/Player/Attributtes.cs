@@ -36,6 +36,10 @@ public class Attributtes : MonoBehaviour {
 	public int MaxHealth;
 
 	private Color32 piel;
+	private int equipedWeapon;
+
+	public Transform handWeapon;
+	public Transform offHandWeapon;
 
 	void Awake()
 	{
@@ -209,15 +213,17 @@ public class Attributtes : MonoBehaviour {
 	public void InstantiateWeapon() {
 		GameObject weapon;
 		GameObject instantiated;
-		Transform hand = GameObject.Find ("HandWeapon").transform;
+		Transform hand = this.handWeapon;//GameObject.Find ("HandWeapon").transform;
 		if (hand.childCount > 0)
 			Destroy (hand.GetChild (0).gameObject);
-		Transform offHand = GameObject.Find ("OffHandWeapon").transform;
+		Transform offHand = this.handWeapon;//GameObject.Find ("OffHandWeapon").transform;
 		if (offHand.childCount > 0)
 			Destroy (offHand.GetChild (0).gameObject);
 
 		PlayerEquip pe = equipamiento.GetComponent<PlayerEquip>();
 		int st = pe.equipment.weapon.subType;
+		this.equipedWeapon = st;
+
 
 		switch (st) {
 		case (int)Utils.WeaponType.ESPADA:
@@ -250,6 +256,59 @@ public class Attributtes : MonoBehaviour {
 			instantiatedOff.transform.SetParent(offHand, false);
 			break;
 		}
+
+		gameObject.GetComponent<NetworkView>().RPC("InstantiateWeaponOnOthers", RPCMode.Others, st);
+	}
+
+	[RPC]
+	public void InstantiateWeaponOnOthers(int st)
+	{GameObject weapon;
+		GameObject instantiated;
+		Transform hand = this.handWeapon;
+		if (hand.childCount > 0)
+			Destroy (hand.GetChild (0).gameObject);
+		Transform offHand = this.offHandWeapon;
+		if (offHand.childCount > 0)
+			Destroy (offHand.GetChild (0).gameObject);
+		
+		this.equipedWeapon = st;
+
+		switch (st) {
+		case (int)Utils.WeaponType.ESPADA:
+			weapon = Resources.Load<GameObject>("Prefab/Armas/newEspada_2_mano");
+			instantiated = GameObject.Instantiate(weapon) as GameObject;
+			instantiated.transform.SetParent(hand, false);
+			break;
+		case (int)Utils.WeaponType.LIBRO:
+			weapon = Resources.Load<GameObject>("Prefab/Weapons/Book");
+			instantiated = GameObject.Instantiate(weapon) as GameObject;
+			instantiated.transform.SetParent(hand, false);
+			break;
+		case (int)Utils.WeaponType.ARCO:
+			weapon = Resources.Load<GameObject>("Prefab/Armas/newArco");
+			instantiated = GameObject.Instantiate(weapon) as GameObject;
+			instantiated.transform.SetParent(hand, false);
+			break;
+		case (int)Utils.WeaponType.BASTON:
+			weapon = Resources.Load<GameObject>("Prefab/Armas/newStaff");
+			instantiated = GameObject.Instantiate(weapon) as GameObject;
+			instantiated.transform.SetParent(hand, false);
+			break;
+		case (int)Utils.WeaponType.ESCUDO:
+			weapon = Resources.Load<GameObject>("Prefab/Armas/newEspada_1_mano");
+			instantiated = GameObject.Instantiate(weapon) as GameObject;
+			instantiated.transform.SetParent(hand, false);
+			
+			GameObject weaponOff = Resources.Load<GameObject>("Prefab/Armas/newEscudo");
+			GameObject instantiatedOff = GameObject.Instantiate(weaponOff) as GameObject;
+			instantiatedOff.transform.SetParent(offHand, false);
+			break;
+		}
+	}
+
+	void OnPlayerConnected(NetworkPlayer player)
+	{
+		gameObject.GetComponent<NetworkView>().RPC("InstantiateWeaponOnOthers", player, this.equipedWeapon);
 	}
 
 
