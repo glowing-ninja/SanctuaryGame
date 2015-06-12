@@ -119,7 +119,7 @@ public class MapGenerator : MonoBehaviour {
 			int lv = 1;
 			
 			//depth = Mathf.Max (2, 1 + lv / 3 );
-			depth = 1	;
+			depth = 2	;
 
 			MazmorraCompleta = new Map[depth];
 			GameObject terrain = GameObject.Find("Level_0") as GameObject;
