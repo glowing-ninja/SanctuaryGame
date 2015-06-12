@@ -53,6 +53,7 @@ public class ENDeath : MonoBehaviour {
 				
 				mG.MazmorraCompleta[this.level].enemyDatabase.EnemyList[this.index].isDead = true;
                 deadthInExplosion = enemigo.DeadthInExplosion();
+                GetComponent<NetworkView>().RPC("deadthInExplosionRPC", RPCMode.All, deadthInExplosion);
 				GetComponent<NetworkView>().RPC ("SpawnChestAcrossTheNetwork", RPCMode.All, parentName);
 				GetComponent<NetworkView>().RPC ("DestroyAccrosTheNetwork",RPCMode.AllBuffered);
 
@@ -98,6 +99,12 @@ public class ENDeath : MonoBehaviour {
 		}
 
 	}
+
+    [RPC]
+    void deadthInExplosionRPC(bool pe_death)
+    {
+        deadthInExplosion = pe_death;
+    }
 
 	[RPC]
 	void SpawnChestAcrossTheNetwork(string parentName) {
